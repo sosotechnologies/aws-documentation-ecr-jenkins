@@ -1,0 +1,109 @@
+site_name: SosoTech External Documentation
+site_description: SosoTech External Documentation for Tenants
+repo_name: soso_technologies_macaz_doc.io
+site_url: https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/
+repo_url: https://github.com/sosotechnologies/soso_technologies_macaz_doc.io
+edit_uri: https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/repo/blob/main/docs/index.md
+copyright: SosoTech LLC - Documentation
+theme:
+  name: readthedocs
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+extra_css:
+- assets/stylesheets/extra.css
+extra_javascript:
+- assets/javascripts/extra.js
+extra:
+  social:
+  - type: github
+    link: https://github.com/sosotechnologies/
+  - type: medium
+    link: https://medium.com/@sosotechglobal/
+
+markdown_extensions:
+- markdown.extensions.admonition
+nav:
+ - Home: 
+   - About Us: index.md
+ - Getting Started: 
+   - Script Installation: Getting-Started/all-scripts.md
+   - Local-Installation: Getting-Started/local-install.md
+   - Remote Installation: Getting-Started/remote-install.md
+ - Weekly Lectures: 
+   - CICD: weekly/CICD/cicd.md
+   - Cloud Technologies: weekly/Cloud-Technologies/intro-aws.md
+   - GitHub: weekly/GitHub/github.md
+   - GitOps: weekly/GitOps/gitops.md
+   - GitHub Action: weekly/Gitaction/gitaction.md
+   - Terraform: weekly/Terraform/github.md
+   - Docker: weekly/Docker/docker.md
+   - Kubernetes: weekly/Kubernetes/Kubernetes.md
+   - Jenkins: weekly/Jenkins/jenkins.md
+   - AI: weekly/AI/ai.md
+   - Kafka: weekly/Kafka/kafka.md
+   - ELK: weekly/ELK/elk.md
+   - Flask: weekly/Flask/flask.md
+   - Azure: weekly/Azure/azure.md
+   - OpenShift: weekly/Openshift/openshift.md
+   - Web Development: weekly/web-development/web-dev.md
+   - MySQL Windows: weekly/mysql-windows/mysql-windows.md
+   - Random Topics: 
+     - 3 Tier App: weekly/Random/3tier.md
+     - Kubernetes API: weekly/Random/k8sapi.md
+     - OS Types Commands: weekly/Random/operating-systems.md
+     - EKS-IAM: weekly/Random/eks-iam.md
+     - ECR-Jenkins: weekly/Random/git-ecr-jenkins.md
+     - Helm-Terraform-jenkins: weekly/Random/Helm-Terraform-jenkins.md
+     - Disaster Recovery: weekly/Random/Disaster-rec.md
+     - Domain Git GoDaddy: weekly/Random/domain-github.md
+     - Scripts: weekly/Random/scripts.md
+  
+ 
+ 
+
+
+  # - Extensions:
+  #   - setup/extensions/index.md
+  #   - Python Markdown: setup/extensions/python-markdown.md
+  #   - Python Markdown Extensions: setup/extensions/python-markdown-extensions.md
+  # - Dependencies:
+  #   - setup/dependencies/image-processing.md

@@ -1,5 +1,11 @@
 # shell script to install the following with aws-userdata. 
-The server is ubuntu server 20.04
+The server is Ubuntu server 20.04
+
+***AFTER Docker is installed run this***
+
+```
+sudo chown ubuntu:docker /var/run/docker.sock
+```
 
 - snap
 - unzip

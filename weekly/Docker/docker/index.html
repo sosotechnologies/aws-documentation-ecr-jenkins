@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Docker/docker/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Docker - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Docker";
+        var mkdocs_page_input_path = "weekly\\Docker\\docker.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Docker/docker/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#docker-architecture">Docker architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dockerfile">Dockerfile</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker-network">Docker Network</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-network-drivers">Docker Network Drivers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-storage">Docker Storage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-docker-and-mkdocs">1. Docker and Mkdocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#build-and-push-docker">Build and Push Docker</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Docker/docker.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="history-of-containarizaion">History of Containarizaion</h1>
+<p><img alt="docker1" src="../photos/docker1.png" /></p>
+<ul>
+<li><strong><em>Traditional deployment era:</em></strong> Early on, organizations ran applications on physical servers. 
+There was no way to define resource boundaries for applications in a physical server, and this 
+caused resource allocation issues. For example, if multiple applications run on a physical server, 
+there can be instances where one application would take up most of the resources, and as a result, 
+the other applications would underperform. A solution for this would be to run each application on 
+a different physical server. But this did not scale as resources were underutilized, and it was 
+expensive for organizations to maintain many physical servers.</li>
+<li><strong><em>Virtualized deployment era:</em></strong> As a solution, virtualization was introduced. It allows you to 
+run multiple Virtual Machines (VMs) on a single physical server's CPU. Virtualization allows 
+applications to be isolated between VMs and provides a level of security as the information of 
+one application cannot be freely accessed by another application. Each VM is a full machine running
+all the components, including its own operating system, on top of the virtualized hardware.</li>
+<li><strong><em>Container deployment era:</em></strong> Containers are like VMs, but they have relaxed isolation properties 
+to share the operating system (OS) the applications. Containers are an abstraction at the app layer 
+that packages code and dependencies together. Multiple containers can run on the same machine and 
+share the OS kernel with other containers, each running as isolated processes in user space.</li>
+</ul>
+<h3 id="docker-architecture">Docker architecture</h3>
+<p><img alt="docker2" src="../photos/docker2.png" /></p>
+<p>Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does 
+the heavy lifting of building, running, and distributing your Docker containers. The Docker client 
+and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon. 
+The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface.</p>
+<p><strong><em>What is Docker?</em></strong>
+Docker is a software platform that allows you to build, test, and deploy applications quickly. 
+Docker packages software into standardized units called containers that have everything the software 
+needs to run including libraries, system tools, code, and runtime. Using Docker, you can quickly 
+deploy and scale applications into any environment and know your code will run. 
+<strong><em>What’s a docker container?</em></strong>
+A container is a Runnable instance of an image. A Docker container image is a lightweight, 
+standalone, executable package of software that includes everything needed to run an application: code, 
+runtime, system tools, system libraries and settings.
+<strong><em>What is an image</em></strong>
+An image is a read-only template with instructions for creating a Docker container. Often, an image 
+is based on another image, with some additional customization. For example, you may build an image which 
+is based on the ubuntu image, but installs the Apache web server and your application, as well as the 
+configuration details needed to make your application run.
+<strong><em>What’s the difference between an Image and a container?</em></strong>
+Simply put, containers are dependent on images. Containers need images to construct a run-time 
+environment and run an application.</p>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>A Dockerfile is a text document that contains all the commands a user could call on the command line to 
+assemble an image.</p>
+<p><strong><em>Breaking down the components of a dockerfile</em></strong></p>
+<pre><code class="language-Dockerfile">FROM node
+WORKDIR /app
+COPY . /app 
+RUN npm install 
+EXPOSE 80
+CMD [&quot;node&quot;, &quot;server.js&quot;]
+</code></pre>
+<ol>
+<li>FROM node            <br />
+      build your image from another base image</li>
+<li>WORKDIR /app           <br />
+      this workdir is what i defined in #2, I am telling Docker that when I install npm, I want you to do in this directory. 
+      Optionally, i can still define my WORKDIR as " /app  "</li>
+<li>COPY . /app             <ul>
+<li>COPY . ./ </li>
+<li>COPY . .</li>
+<li>tell docker the files on the left it should use. In our case i'm using [. .] meaning select every file</li>
+<li>The first [.] represent the files in the same directory as the dockerfile</li>
+<li>The second [.] represents the path inside the image where those files will be stored.</li>
+<li>Ex: you can copy like so: " COPY . /app " IN this example we are copying the files to /app in the container</li>
+<li>I can also set as a relative path as just [ . ./] because I have defined a workdir with a defined value</li>
+</ul>
+</li>
+<li>RUN npm install            <ul>
+<li>if you recall, we did this process as a command earlier</li>
+</ul>
+</li>
+<li>EXPOSE 80               <ul>
+<li>remember we have defined a port # in our server.js, and we have to let docker know that 
+ it should listen to this port</li>
+</ul>
+</li>
+<li>CMD ["node", "server.js"]         <ul>
+<li>to define a CMD, we open an array [], and also pass 2 strings "", "" to separate our commands</li>
+<li>CMD command specifies the instruction that is to be executed when a Docker container starts.</li>
+<li>We are telling docker to use the node command inside the container to run our server.js file.</li>
+</ul>
+</li>
+</ol>
+<h3 id="docker-network">Docker Network</h3>
+<p>One of the reasons Docker containers and services are so powerful is that you can connect them 
+together, or connect them to non-Docker workloads. 
+Docker containers can communicate an HTTP request in ways:
+-   From the container to an external application via an API communication or 
+-   From the container to a local host machine
+-   From the container to another container application</p>
+<h4 id="docker-network-drivers">Docker Network Drivers</h4>
+<p>Docker Networks actually support different kinds of "Drivers" which influence the behavior of the Network.
+The default driver is the "bridge" driver - it provides the behavior shown in this module (i.e. Containers 
+can find each other by name if they are in the same Network).
+The driver can be set when a Network is created, simply by adding the --driver option.</p>
+<p>EX: <code>docker network create --driver bridge soso-net</code></p>
+<p>Of course, if you want to use the "bridge" driver, you can simply omit the entire option since "bridge" 
+is the default anyways. Docker also supports these alternative drivers - though you will use the "bridge" 
+driver in most cases:
+<strong><em>host:</em></strong> For standalone containers, isolation between container and host system is removed 
+(i.e. they share localhost as a network)
+<strong><em>overlay:</em></strong> Multiple Docker daemons (i.e. Docker running on different machines) are able to connect with each other. 
+Only works in "Swarm" mode which is a dated / almost deprecated way of connecting multiple containers
+<strong><em>macvlan:</em></strong> You can set a custom MAC address to a container - this address can then be used for 
+communication with that container
+<strong><em>none:</em></strong> All networking is disabled.
+<strong><em>Third-party plugins:</em></strong> You can install third-party plugins which then may add all kinds of behaviors and 
+functionalities. As mentioned, the "bridge" driver makes most sense in the vast majority of scenarios.</p>
+<h4 id="docker-storage">Docker Storage</h4>
+<p>There are 2 kinds of storage that docker can use (Anonymous Volume/named volume and Bind Mount)
+<strong><em>Anonymous Volume/named volume</em></strong> are managed by docker, while <strong><em>Bind Mount</em></strong> is managed by us, cause we setup
+(Anonymous Volume): A type of volume managed by docker. Anonymous volumes have to be created inside a dockerfile.</p>
+<p>Named Volume: For Data that can be viewed and stored but can’t be accessed directly
+For Named volume, I don’t have to add the volume in the dockerfile. I will add a volume line in the command 
+I will type in the terminal.</p>
+<p>Ex: Creating a sample Names Volume:</p>
+<pre><code>docker run -d -p 3000:80  --name mysoso-container sosonode    
+docker run -d -p 3000:80  --name mysoso-container [-v for volume] [the path inside the container we wanna save] [volume name]
+docker run -d -p 3000:80  --name mysoso-container -v sosofeedback:/app/feedback mysosofeedback-node:volumes
+</code></pre>
+<p>Ex: Creating a sample Bind Mounts Volume:</p>
+<pre><code>docker run -d -p 3000:80  --name mysoso-container -v sosofeedback:/app/feedback [add another volume] mysosofeedback-node:volumes 
+docker run -d -p 3000:80  --name mysoso-container -v sosofeedback:/app/feedback -v  “/Users/macfe/OneDrive/Desktop/nodejs-a-z/nodejs-02/data-volume-dockerfile/data-volumes-02-added-dockerfile:/app” mysosofeedback-node:volumes 
+</code></pre>
+<h3 id="use-cases">Use Cases</h3>
+<h4 id="1-docker-and-mkdocs">1. Docker and Mkdocs</h4>
+<p>Build and deploy push Mkdocs to ECR/DockerHub
+Clone this repo: <a href="https://github.com/sosotechnologies/docs_docker_io.git">docs_docker_io</a></p>
+<p><strong><em>Install Docker</em></strong></p>
+<pre><code>sudo yum install docker -y
+sudo systemctl status docker
+sudo systemctl start docker
+sudo systemctl enable docker
+</code></pre>
+<ol>
+<li>
+<h4 id="build-and-push-docker">Build and Push Docker</h4>
+<code>sudo docker build -t sosodocs .</code></li>
+</ol>
+<p><strong><em>Tag the sosodoc image</em></strong></p>
+<p><code>sudo docker tag sosodocs 088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository:mkdocs-v1</code></p>
+<p><strong><em>Push image to repo</em></strong></p>
+<p><code>sudo docker push 088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository:mkdocs-v1</code></p>
+<p><strong><em>Run the image with any one of the 2 commands, set yout ip:80</em></strong></p>
+<p><code>docker run -itd -p 80:80 --rm sosodocs</code></p>
+<p><code>docker run -t -i -p 80:80 sosodocs</code></p>
+<p>And that is all, you should be able to navigate to http://127.0.0.1:80 and see the documentation website running.</p>
+<p><strong><em>Optional BONUS!!!: DEPLOY TO AN EXISTING EKS CLUSTER</em></strong>  </p>
+<pre><code>k expose deploy mkdocs --name=mkdocs-svc --port=80 --type=LoadBalancer --targetPort=80 --dry-run=client -o yaml &gt; deploy.yaml
+</code></pre>
+<pre><code>k expose deploy mkdocs --name=mkdocs-svc --port=80 --type=LoadBalancer --target-port=80 --dry-run=client -o yaml &gt; service.yaml
+</code></pre>
+<p><strong><em>Optional</em></strong>
+Tag Your docker image with a version </p>
+<p><code>sudo docker tag sosodocs sosodocs:v1</code></p>
+<p>Delete the existing running container, 26b43376e040 is mine, get yours.</p>
+<p><code>sudo docker rm 26b43376e040</code>  <br />
+           OR
+<code>sudo docker rm 26b43376e040 --force</code></p>
+<p>Re-run the new versioned-image</p>
+<p><code>sudo docker run -itd -p 80:80 --rm sosodocs:v1</code></p>
+<p>To remove container or image:</p>
+<pre><code>docker rm [container]
+docker rmi [image]
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Gitaction/gitaction/" class="btn btn-neutral float-left" title="GitHub Action"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Jenkins/jenkins/" class="btn btn-neutral float-right" title="Jenkins">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Gitaction/gitaction/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Jenkins/jenkins/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

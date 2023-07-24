@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/CICD/cicd/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>CICD - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CICD";
+        var mkdocs_page_input_path = "weekly\\CICD\\cicd.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/CICD/cicd/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">CICD</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#nexus">Nexus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-nexus">Configure Nexus</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sonarqube">SonarQube</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sonar-installation">Sonar Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-sonar">Configure Sonar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slack">Slack</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#jenkins">Jenkins</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install">Install</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-install-jenkins-plugins">1. Install Jenkins plugins</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-global-tool-configuration">2. Global Tool Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-configure-credential">3. Configure Credential</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-aws-user-credentials-for-ecr">Configure AWS USER Credentials for ECR</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-dockerhub-credentialtoken">Configure Dockerhub Credential(Token)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-sonarqube-credentialtoken">Configure SonarQube Credential(Token)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-slack-credential">Configure SLACK Credential</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-ssh-trigger-for-build-trigger">Configure ssh-trigger for Build trigger</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-jenkins-slave-kops-ubuntu-user">Configure Jenkins-Slave Kops Ubuntu user</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-aws-credential">Configure AWS Credential</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-configure-systems">4. Configure Systems</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-sonarqube-server">Configure SonarQube Server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-timestamp">Configure TimeStamp</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-slack-notification">Configure Slack Notification</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jenkins-jobs">Jenkins Jobs</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#freestyle-project">Freestyle Project</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline">Pipeline</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#build-triggers">Build Triggers</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>CICD</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/CICD/cicd.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="install-servers">Install servers</h1>
+<p>Install Individuals servers for:
+- Nexus
+- Sonarqube
+- Jenkins</p>
+<p><strong><em>After Installing Servers</em></strong></p>
+<ul>
+<li>Add Sonar security group (All Traffic) in the Jenkins server security Group in AWS Console.</li>
+<li>Also, Jenkins security group (All Traffic) in the Sonar server security Group in AWS Console.</li>
+</ul>
+<h2 id="nexus">Nexus</h2>
+<ul>
+<li>Centos 7 (Amazon Market place)</li>
+<li>TCP Port <strong><em>8081</em></strong> from MyIP and Jenkins-SG</li>
+</ul>
+<pre><code class="language-sh">#!/bin/bash
+yum install java-1.8.0-openjdk.x86_64 wget -y   
+mkdir -p /opt/nexus/   
+mkdir -p /tmp/nexus/                           
+cd /tmp/nexus/
+NEXUSURL=&quot;https://download.sonatype.com/nexus/3/latest-unix.tar.gz&quot;
+wget $NEXUSURL -O nexus.tar.gz
+EXTOUT=`tar xzvf nexus.tar.gz`
+NEXUSDIR=`echo $EXTOUT | cut -d '/' -f1`
+rm -rf /tmp/nexus/nexus.tar.gz
+rsync -avzh /tmp/nexus/ /opt/nexus/
+useradd nexus
+chown -R nexus.nexus /opt/nexus 
+cat &lt;&lt;EOT&gt;&gt; /etc/systemd/system/nexus.service
+[Unit]                                                                          
+Description=nexus service                                                       
+After=network.target                                                            
+
+[Service]                                                                       
+Type=forking                                                                    
+LimitNOFILE=65536                                                               
+ExecStart=/opt/nexus/$NEXUSDIR/bin/nexus start                                  
+ExecStop=/opt/nexus/$NEXUSDIR/bin/nexus stop                                    
+User=nexus                                                                      
+Restart=on-abort                                                                
+
+[Install]                                                                       
+WantedBy=multi-user.target                                                      
+EOT
+echo 'run_as_user=&quot;nexus&quot;' &gt; /opt/nexus/$NEXUSDIR/bin/nexus.rc
+systemctl daemon-reload
+systemctl start nexus
+systemctl enable nexus
+
+</code></pre>
+<h3 id="configure-nexus">Configure Nexus</h3>
+<p>Login:
+- <strong><em>username:</em></strong> admin
+- <strong><em>Get Password:</em></strong> <code>cat /opt/nexus/sonatype-work/nexus3/admin.password</code></p>
+<p><strong><em>Check and start the nexus service</em></strong></p>
+<pre><code>sudo systemctl status nexus
+</code></pre>
+<h2 id="sonarqube">SonarQube</h2>
+<ul>
+<li>Ubuntu VERSION="18.04"</li>
+<li>TCP Port <strong><em>9000</em></strong></li>
+<li>TCP Port <strong><em>80</em></strong> from MyIP and Jenkins-SG</li>
+</ul>
+<h3 id="sonar-installation">Sonar Installation</h3>
+<p>Script</p>
+<pre><code class="language-sh">#!/bin/bash
+cp /etc/sysctl.conf /root/sysctl.conf_backup
+cat &lt;&lt;EOT&gt; /etc/sysctl.conf
+vm.max_map_count=262144
+fs.file-max=65536
+ulimit -n 65536
+ulimit -u 4096
+EOT
+cp /etc/security/limits.conf /root/sec_limit.conf_backup
+cat &lt;&lt;EOT&gt; /etc/security/limits.conf
+sonarqube   -   nofile   65536
+sonarqube   -   nproc    409
+EOT
+sudo apt-get update -y
+sudo apt-get install openjdk-11-jdk -y
+sudo update-alternatives --config java
+java -version
+sudo apt update
+wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; &gt;&gt; /etc/apt/sources.list.d/pgdg.list'
+sudo apt install postgresql postgresql-contrib -y
+#sudo -u postgres psql -c &quot;SELECT version();&quot;
+sudo systemctl enable postgresql.service
+sudo systemctl start  postgresql.service
+sudo echo &quot;postgres:admin123&quot; | chpasswd
+runuser -l postgres -c &quot;createuser sonar&quot;
+sudo -i -u postgres psql -c &quot;ALTER USER sonar WITH ENCRYPTED PASSWORD 'admin123';&quot;
+sudo -i -u postgres psql -c &quot;CREATE DATABASE sonarqube OWNER sonar;&quot;
+sudo -i -u postgres psql -c &quot;GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;&quot;
+systemctl restart  postgresql
+#systemctl status -l   postgresql
+netstat -tulpena | grep postgres
+sudo mkdir -p /sonarqube/
+cd /sonarqube/
+sudo curl -O https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.3.0.34182.zip
+sudo apt-get install zip -y
+sudo unzip -o sonarqube-8.3.0.34182.zip -d /opt/
+sudo mv /opt/sonarqube-8.3.0.34182/ /opt/sonarqube
+sudo groupadd sonar
+sudo useradd -c &quot;SonarQube - User&quot; -d /opt/sonarqube/ -g sonar sonar
+sudo chown sonar:sonar /opt/sonarqube/ -R
+cp /opt/sonarqube/conf/sonar.properties /root/sonar.properties_backup
+cat &lt;&lt;EOT&gt; /opt/sonarqube/conf/sonar.properties
+sonar.jdbc.username=sonar
+sonar.jdbc.password=admin123
+sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+sonar.web.host=0.0.0.0
+sonar.web.port=9000
+sonar.web.javaAdditionalOpts=-server
+sonar.search.javaOpts=-Xmx512m -Xms512m -XX:+HeapDumpOnOutOfMemoryError
+sonar.log.level=INFO
+sonar.path.logs=logs
+EOT
+cat &lt;&lt;EOT&gt; /etc/systemd/system/sonarqube.service
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+[Service]
+Type=forking
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+User=sonar
+Group=sonar
+Restart=always
+LimitNOFILE=65536
+LimitNPROC=4096
+[Install]
+WantedBy=multi-user.target
+EOT
+systemctl daemon-reload
+systemctl enable sonarqube.service
+#systemctl start sonarqube.service
+#systemctl status -l sonarqube.service
+apt-get install nginx -y
+rm -rf /etc/nginx/sites-enabled/default
+rm -rf /etc/nginx/sites-available/default
+cat &lt;&lt;EOT&gt; /etc/nginx/sites-available/sonarqube
+server{
+    listen      80;
+    server_name sonarqube.groophy.in;
+    access_log  /var/log/nginx/sonar.access.log;
+    error_log   /var/log/nginx/sonar.error.log;
+    proxy_buffers 16 64k;
+    proxy_buffer_size 128k;
+    location / {
+        proxy_pass  http://127.0.0.1:9000;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_redirect off;
+
+        proxy_set_header    Host            \$host;
+        proxy_set_header    X-Real-IP       \$remote_addr;
+        proxy_set_header    X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto http;
+    }
+}
+EOT
+ln -s /etc/nginx/sites-available/sonarqube /etc/nginx/sites-enabled/sonarqube
+systemctl enable nginx.service
+#systemctl restart nginx.service
+sudo ufw allow 80,9000,9001/tcp
+echo &quot;System reboot in 30 sec&quot;
+sleep 30
+reboot
+</code></pre>
+<h3 id="configure-sonar">Configure Sonar</h3>
+<p>Check and start the sonarqube service</p>
+<pre><code>sudo systemctl status sonarqube
+</code></pre>
+<p>Login:
+- <strong><em>username:</em></strong> admin
+- <strong><em>Password:</em></strong> admin</p>
+<h2 id="slack">Slack</h2>
+<p>SetUp Slack
+Steps:
+- A workspace: sosotech
+- Create a Channel(s): sosochannel1
+- Add teammates to the channel
+- Add Jenkins credentials: sososlacktoken
+ Get the Jenkins app from the : <a href="https://sosotech.slack.com/apps">Slack App Directory</a></p>
+<p><img alt="slack1" src="../cicd-photos/slack1.png" /></p>
+<ul>
+<li>
+<p>Add to Slack and select the channel</p>
+</li>
+<li>
+<p>Add the CI Jenkins Integration: Im using #sosochannel1</p>
+</li>
+</ul>
+<p><img alt="slack2" src="../cicd-photos/slack2.png" /></p>
+<ul>
+<li>Copy the Token in Step 3 and go create a Slack Credential In Jenkins credentials</li>
+</ul>
+<p><img alt="slack3" src="../cicd-photos/slack3.png" /></p>
+<ul>
+<li>Scroll docn and save.</li>
+<li>No Go to jenkins and configure credentials called: sososlacktoken</li>
+</ul>
+<h2 id="jenkins">Jenkins</h2>
+<ul>
+<li>Ubuntu VERSION="20.04.6 LTS </li>
+<li>TCP Port <strong><em>8080</em></strong> from Anywhere - IPv4 and IPv6</li>
+</ul>
+<h3 id="install">Install</h3>
+<p>If you have any issues, then: curl the IP address if you had any issues.</p>
+<p><code>curl http://[your-put-IP]/latest/user-data LIKE SO: --&gt; curl http://56.22.1.2/latest/user-data</code>
+Also refer to site to update your code: <a href="https://www.jenkins.io/blog/2023/03/27/repository-signing-keys-changing/">Optional-Link</a></p>
+<p>Ubuntu installation script for <strong><em>VERSION="20.04.6 LTS</em></strong></p>
+<pre><code class="language-sh">#!/bin/bash
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+sudo apt install maven -y
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc &gt; /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list &gt; /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
+</code></pre>
+<p><strong><em>Check and start the jenkins service</em></strong></p>
+<pre><code>sudo systemctl status jenkins
+sudo systemctl status jenkins
+java -version
+whereis git
+</code></pre>
+<p><strong><em>Get Jenkins Password</em></strong></p>
+<pre><code>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+</code></pre>
+<p><strong><em>INSTALL JDK8 On the Jenkins Server</em></strong>
+In Server terminal, Install Maven and JDK8</p>
+<pre><code>sudo apt update
+sudo apt install openjdk-8-jdk -y
+</code></pre>
+<p><strong><em>Get JDK8 Path from the Jenkins Server</em></strong></p>
+<p>CD to ROOT and Copy the java path. 
+Copy the path in a node Path for use in Jenkins Global Tool Configuration.</p>
+<p><strong><em>/usr/lib/jvm/java-1.8.0-openjdk-amd64</em></strong>. See below Photo</p>
+<pre><code>sudo su -
+ls /usr/lib/jvm
+</code></pre>
+<p><img alt="cicd" src="../cicd-photos/cicd1.png" /></p>
+<p><strong><em>INSTALL MAVEN On the Jenkins Server</em></strong>
+Go to the Maven site and get latest version: <a href="https://maven.apache.org/download.cgi">Right-click and copy .tar link</a>
+<img alt="cicd" src="../cicd-photos/cicd3.png" /></p>
+<pre><code>sudo su -
+cd /opt
+apt install wget
+wget https://dlcdn.apache.org/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.tar.gz
+tar -xvzf apache-maven-3.9.1-bin.tar.gz
+mv apache-maven-3.9.1 maven
+rm -rf apache-maven-3.9.1-bin.tar.gz
+cd ..
+</code></pre>
+<p><strong><em>Install Docker on the Jenkins Server</em></strong></p>
+<p>see link: <a href="https://docs.docker.com/engine/install/ubuntu/">Reference link</a></p>
+<p><code>sudo su -</code></p>
+<p><code>sudo apt update -y</code></p>
+<pre><code>sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg
+</code></pre>
+<p><code>sudo install -m 0755 -d /etc/apt/keyrings</code></p>
+<p><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg</code></p>
+<p><code>sudo chmod a+r /etc/apt/keyrings/docker.gpg</code></p>
+<pre><code>echo \
+  &quot;deb [arch=&quot;$(dpkg --print-architecture)&quot; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  &quot;$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)&quot; stable&quot; | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre>
+<p><code>sudo apt-get update -y</code></p>
+<p><code>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y</code></p>
+<pre><code>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre>
+<pre><code>sudo systemctl status docker
+docker -v
+</code></pre>
+<p><strong><em>Add Jenkins User to the docker group</em></strong></p>
+<p><code>id jenkins</code></p>
+<p><code>usermod -a -G docker jenkins</code></p>
+<p><strong><em>Install AWSCLI in Jenkins Server</em></strong></p>
+<pre><code>sudo apt install awscli -y
+</code></pre>
+<p><strong><em>NOW RESTART YOUR JENKINS SERVER</em></strong></p>
+<h3 id="1-install-jenkins-plugins">1. Install Jenkins plugins</h3>
+<p><strong><em>Dashboard --&gt; Manage Jenkins --&gt; Plugin Manager</em></strong></p>
+<ul>
+<li>Pipeline Maven Integration</li>
+<li>Pipeline Utility Steps</li>
+<li>Github Integration Plugin</li>
+<li>SonarQube Scanner</li>
+<li>Slack Notification</li>
+<li>Build Timestamp</li>
+<li>docker pipeline</li>
+<li>docker</li>
+<li>Amazon ECR</li>
+<li>CloudBees Docker Build and Publish</li>
+<li>Amazon Web Services SDK :: All</li>
+</ul>
+<h3 id="2-global-tool-configuration">2. Global Tool Configuration</h3>
+<p><strong><em>Configure CI [Git, Maven, JVM, SonarQube Scanner ] on Jenkins GUI</em></strong>.</p>
+<p>In the Jenkins UI --&gt; manage Jenkins --&gt; Global Tool Configuration [save]</p>
+<table>
+<thead>
+<tr>
+<th>Services</th>
+<th align="center">Configured Names</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JDK</td>
+<td align="center">SosoJDK8</td>
+</tr>
+<tr>
+<td>git</td>
+<td align="center">Git</td>
+</tr>
+<tr>
+<td>MAVEN</td>
+<td align="center">SOSOMAVEN3</td>
+</tr>
+<tr>
+<td>SonarQube Scanner</td>
+<td align="center">sososonar4.7</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>See the Maven, Git and JDK configuration images
+<img alt="cicd" src="../cicd-photos/cicd2.png" /></p>
+<p>See the SonarQube Configuration image
+<img alt="cicd7-sonar" src="../cicd-photos/cicd7-sonar.png" /></p>
+<h3 id="3-configure-credential">3. Configure Credential</h3>
+<p>Navigate to: <strong><em>Jenkins UI --&gt; manage Jenkins --&gt; Manage Credentials --&gt; System --&gt; Global credentials</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>Services</th>
+<th align="center">Credential ID</th>
+<th align="right">UserName/Password/secret-text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DockerHub</td>
+<td align="center">sosodockertoken</td>
+<td align="right">Username-Password</td>
+</tr>
+<tr>
+<td>AWS - ECR User</td>
+<td align="center">sosoawstoken</td>
+<td align="right">UserName/Password</td>
+</tr>
+<tr>
+<td>MAVEN</td>
+<td align="center"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>SonarQube</td>
+<td align="center">sososonartoken</td>
+<td align="right">secret-text</td>
+</tr>
+<tr>
+<td>Slack</td>
+<td align="center">sososlacktoken</td>
+<td align="right">secret-text</td>
+</tr>
+<tr>
+<td>build-trigger</td>
+<td align="center">sososshtrigger</td>
+<td align="right">SSH Username with Private Key</td>
+</tr>
+<tr>
+<td>Jenkins-Slave(KOPS)</td>
+<td align="center">sosokopstoken</td>
+<td align="right">SSH Username with Private Key</td>
+</tr>
+</tbody>
+</table>
+<p>In the Jenkins UI:
+Configure the following credentials</p>
+<ul>
+<li>AWS</li>
+<li>DockerHub --&gt; (generate Token) My account --&gt; security --&gt; secret text</li>
+<li>k8s Config</li>
+<li>sonarqube --&gt; (generate Token) My account --&gt; security --&gt; secret text</li>
+</ul>
+<h4 id="configure-aws-user-credentials-for-ecr">Configure AWS USER Credentials for ECR</h4>
+<p>Create credentials for the username and password for the saved Jenkins user.
+<img alt="aws-ecr" src="../cicd-photos/aws-ecr.png" /></p>
+<h4 id="configure-dockerhub-credentialtoken">Configure Dockerhub Credential(Token)</h4>
+<ol>
+<li>Log into your dockerhub account and create username-password --&gt; security: <a href="https://hub.docker.com/settings/security">LINK</a></li>
+</ol>
+<p><img alt="dockerhub" src="../cicd-photos/dockerhub.png" /></p>
+<h4 id="configure-sonarqube-credentialtoken">Configure SonarQube Credential(Token)</h4>
+<ol>
+<li>Login to the sonarQube UI, go to Myaccount --&gt; security create a Token</li>
+</ol>
+<p><img alt="sonar-token" src="../cicd-photos/sonar-token.png" />
+Add a Token </p>
+<ol>
+<li>Add the Token as Credential To jenkins Global credentials</li>
+</ol>
+<p><img alt="sonar-credential" src="../cicd-photos/sonar-credential.png" /> </p>
+<h4 id="configure-slack-credential">Configure SLACK Credential</h4>
+<p><img alt="slack-creds" src="../cicd-photos/slack-creds.png" /> </p>
+<h4 id="configure-ssh-trigger-for-build-trigger">Configure ssh-trigger for Build trigger</h4>
+<p><img alt="ssh-trigger" src="../cicd-photos/ssh-trigger.png" /> </p>
+<h4 id="configure-jenkins-slave-kops-ubuntu-user">Configure Jenkins-Slave Kops Ubuntu user</h4>
+<ul>
+<li>use the KOPS instance private IP as the Host</li>
+<li>use the Remote directory /opt/jenkins-slave; will create this later.
+<img alt="sosokopstoken" src="../cicd-photos/sosokopstoken.png" /> </li>
+</ul>
+<h4 id="configure-aws-credential">Configure AWS Credential</h4>
+<h3 id="4-configure-systems">4. Configure Systems</h3>
+<p>Navigate to: <strong><em>Jenkins UI --&gt; manage Jenkins --&gt; Configure System</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>Services</th>
+<th align="center">Configured Names</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xxx</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>xxx</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Slack</td>
+<td align="center">sosotech</td>
+</tr>
+<tr>
+<td>SonarQube Servers</td>
+<td align="center">sososonar</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="configure-sonarqube-server">Configure SonarQube Server</h4>
+<p>Configure the sonar server in Jenkins uring the SonarQube Public IP and the sonar credentials.
+<img alt="sonar-configure" src="../cicd-photos/sonar-configure.png" /></p>
+<p>For quality gate and analysis, see the sonarQube section 
+<strong><em>NOTE</em></strong>: Don't forget to add webhooks</p>
+<h4 id="configure-timestamp">Configure TimeStamp</h4>
+<p>change the timestamp pattern <a href="yy-MM-dd_HH-mm">yy-MM-dd_HH-mm</a> as seen in the image: </p>
+<p><img alt="time-pattern" src="../cicd-photos/time-pattern.png" /></p>
+<h4 id="configure-slack-notification">Configure Slack Notification</h4>
+<p>configure the folloring :
+- A workspace: sosotech
+- A Channel(s): sosochannel1</p>
+<p><img alt="configure-slack" src="../cicd-photos/configure-slack.png" /></p>
+<h3 id="jenkins-jobs">Jenkins Jobs</h3>
+<p>There are some Jenkins Jobs Demo'd here, like Pipeline, Freestyle:</p>
+<h4 id="freestyle-project">Freestyle Project</h4>
+<p>Use this repo: <a href="https://github.com/sosotechnologies/cicd-maven.git">https://github.com/sosotechnologies/cicd-maven.git</a>
+It's a public repo, so credentials are optional
+See the image to guide you during setup.</p>
+<p><img alt="cicd" src="../cicd-photos/cicd6.png" /></p>
+<h4 id="pipeline">Pipeline</h4>
+<p>There are 2 Options to use here:
+  - Pipeline script
+  - Pipeline script from SCM
+  - after build check path: /var/lib/jenkins/workspace</p>
+<pre><code>Some Sample Pipeline Scripts:
+</code></pre>
+<h5 id="pipeline1-jenkins-maven-simple-pipeline">Pipeline1: Jenkins, Maven simple pipeline***</h5>
+<pre><code class="language-Jenkinfile">pipeline {
+    agent any
+    tools {
+        maven &quot;SOSOMAVEN3&quot;
+        jdk &quot;SosoJDK8&quot;
+    }
+
+    stages {
+        stage('Fetch code') {
+            steps {
+               git branch: 'master', url:'https://github.com/sosotechnologies/cicd-maven.git'
+            }
+
+        }
+
+        stage('Build'){
+            steps{
+               sh 'mvn install -DskipTests'
+            }
+
+            post {
+               success {
+                  echo 'I think the archieve is All Good...'
+                  archiveArtifacts artifacts: '**/target/*.war'
+               }
+            }
+        }
+
+        stage('UNIT TEST') {
+            steps{
+                sh 'mvn test'
+            }
+        }
+    }
+}
+
+</code></pre>
+<h5 id="popeline-2-jenkins-maven-checkstyle-sonar-analysis-and-quality-gate-pipeline">Popeline 2: Jenkins, Maven, Checkstyle, Sonar-Analysis and Quality Gate - pipeline</h5>
+<ul>
+<li>Add Sonar security gtoup in the Jenkins server security Group in AWS Console.</li>
+<li>Also, Jenkins  security gtoup in the Sonar server security Group in AWS Console.</li>
+<li>Note: In this step os the sonar pipeline you will see this Line of code:</li>
+</ul>
+<p>steps {
+               withSonarQubeEnv('sososonar') {</p>
+<ul>
+<li>The <strong><em>sososonar</em></strong> represents the name of the SonarQube Servers in Configure Syatem.</li>
+</ul>
+<pre><code class="language-Jenkinfile">pipeline {
+    agent any
+    tools {
+        maven &quot;SOSOMAVEN3&quot;
+        jdk &quot;SosoJDK8&quot;
+    }
+    stages{
+        stage('Fetch code') {
+          steps{
+              git branch: 'master', url:'https://github.com/sosotechnologies/cicd-maven.git'
+          }  
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+            post {
+                success {
+                    echo &quot;I think the archieve is All Good&quot;
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'mvn test'
+            }
+
+        }
+
+        stage('Checkstyle Analysis'){
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
+
+        stage('Sonar Analysis') {
+            environment {
+                scannerHome = tool 'sososonar4.7'
+            }
+            steps {
+               withSonarQubeEnv('sososonar') {
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sosotech \
+                   -Dsonar.projectName=sosotech \
+                   -Dsonar.projectVersion=1.0 \
+                   -Dsonar.sources=src/ \
+                   -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
+                   -Dsonar.junit.reportsPath=target/surefire-reports/ \
+                   -Dsonar.jacoco.reportsPath=target/jacoco.exec \
+                   -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
+              }
+            }
+        }
+
+        stage(&quot;Quality Gate&quot;) {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h5 id="pipeline-3-implementing-docker-ecr">Pipeline 3: Implementing DOCKER ECR</h5>
+<ul>
+<li>Create an AWS-ECR repo called: soso-repository</li>
+<li>Build image of webapp and puch to ECR</li>
+</ul>
+<pre><code class="language-Jenkinsfile">pipeline {
+    agent any
+    tools {
+        maven &quot;SOSOMAVEN3&quot;
+        jdk &quot;SosoJDK8&quot;
+    }
+
+    environment {
+        JenkinsECRCredential = 'ecr:us-east-1:sosoawstoken'
+        sosoappRegistry = &quot;088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository&quot;
+        sosotechRegistry = &quot;https://088789840359.dkr.ecr.us-east-1.amazonaws.com&quot;
+    }
+
+  stages {
+    stage('Fetch code'){
+      steps {
+        git branch: 'master', url: 'https://github.com/sosotechnologies/cicd-maven-jenkins-ecr.git'
+      }
+    }
+
+
+    stage('Test'){
+      steps {
+        sh 'mvn test'
+      }
+    }
+
+
+    stage('Build App Image') {
+      steps {
+
+        script {
+            dockerImage = docker.build( sosoappRegistry + &quot;:$BUILD_NUMBER&quot;, &quot;./sosotech-Dockerfiles/sosoapp/multistagebuild/&quot;)
+             }
+
+     }
+
+    }
+
+    stage('Upload App Image') {
+          steps{
+            script {
+              docker.withRegistry( sosotechRegistry, JenkinsECRCredential ) {
+                dockerImage.push(&quot;$BUILD_NUMBER&quot;)
+                dockerImage.push('latest')
+              }
+            }
+          }
+     }
+
+  }
+}
+
+
+ ```
+
+##### Popeline 4: Jenkins, Maven, Checkstyle, Docker, Sonar-Analysis and Quality Gate - pipeline
+
+```Jenkinsfile
+ pipeline {
+    agent any
+    tools {
+        maven &quot;SOSOMAVEN3&quot;
+        jdk &quot;SosoJDK8&quot;
+    }
+
+    environment {
+        JenkinsECRCredential = 'ecr:us-east-1:sosoawstoken'
+        sosoappRegistry = &quot;088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository&quot;
+        sosotechRegistry = &quot;https://088789840359.dkr.ecr.us-east-1.amazonaws.com&quot;
+    }
+
+  stages {
+    stage('Fetch code'){
+      steps {
+        git branch: 'master', url: 'https://github.com/sosotechnologies/cicd-maven-jenkins-ecr.git'
+      }
+    }
+
+
+    stage('Test'){
+      steps {
+        sh 'mvn test'
+      }
+    }
+
+    stage ('CODE ANALYSIS WITH CHECKSTYLE'){
+        steps {
+            sh 'mvn checkstyle:checkstyle'
+        }
+        post {
+            success {
+                echo 'Generated Analysis Result'
+            }
+        }
+    }
+
+    stage('build &amp;&amp; SonarQube analysis') {
+        environment {
+            scannerHome = tool 'sososonar4.7'
+        }
+        steps {
+            withSonarQubeEnv('sososonar') {
+                sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sosotech \
+                -Dsonar.projectName=sosotech \
+                -Dsonar.projectVersion=1.0 \
+                -Dsonar.sources=src/ \
+                -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
+                -Dsonar.junit.reportsPath=target/surefire-reports/ \
+                -Dsonar.jacoco.reportsPath=target/jacoco.exec \
+                -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
+            }
+        }
+    }
+
+    stage(&quot;Quality Gate&quot;) {
+        steps {
+            timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+    }
+
+    stage('Build App Image') {
+      steps {
+
+        script {
+            dockerImage = docker.build( sosoappRegistry + &quot;:$BUILD_NUMBER&quot;, &quot;./sosotech-Dockerfiles/sosoapp/multistagebuild/&quot;)
+             }
+
+     }
+
+    }
+
+    stage('Upload App Image') {
+          steps{
+            script {
+              docker.withRegistry( sosotechRegistry, JenkinsECRCredential ) {
+                dockerImage.push(&quot;$BUILD_NUMBER&quot;)
+                dockerImage.push('latest')
+              }
+            }
+          }
+     }
+
+  }
+} 
+
+</code></pre>
+<h5 id="pipeline-5-full-pipeline">Pipeline 5: FULL Pipeline***</h5>
+<pre><code class="language-Jenkinfile">def COLOR_MAP = [
+    'SUCCESS': 'good', 
+    'FAILURE': 'danger',
+]
+pipeline {
+    agent any
+    tools {
+        maven &quot;SOSOMAVEN3&quot;
+        jdk &quot;SosoJDK8&quot;
+    }
+    stages{
+        stage('Fetch code') {
+          steps{
+              git branch: 'master', url:'https://github.com/sosotechnologies/cicd-maven.git'
+          }  
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+            post {
+                success {
+                    echo &quot;Now Archiving.&quot;
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'mvn test'
+            }
+
+        }
+
+        stage('Checkstyle Analysis'){
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
+
+        stage('Sonar Analysis') {
+            environment {
+                scannerHome = tool 'sososonar4.7'
+            }
+            steps {
+               withSonarQubeEnv('sososonar') {
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sosotech \
+                   -Dsonar.projectName=sosotech \
+                   -Dsonar.projectVersion=1.0 \
+                   -Dsonar.sources=src/ \
+                   -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
+                   -Dsonar.junit.reportsPath=target/surefire-reports/ \
+                   -Dsonar.jacoco.reportsPath=target/jacoco.exec \
+                   -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
+              }
+            }
+        }
+
+        stage(&quot;Quality Gate&quot;) {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+
+
+        post {
+        always {
+            echo 'Slack Notifications.'
+            slackSend channel: '#sosochannel1',
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: &quot;*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}&quot;
+        }
+    }
+
+}
+</code></pre>
+<ol>
+<li><strong><em>Building sosotech documentation site</em></strong></li>
+</ol>
+<pre><code class="language-Jenkinsfile">pipeline {
+    agent any
+
+    environment {
+        JenkinsECRCredential = 'ecr:us-east-1:sosoawstoken'
+        sosoappRegistry = &quot;088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository&quot;
+        sosotechRegistry = &quot;https://088789840359.dkr.ecr.us-east-1.amazonaws.com&quot;
+    }
+
+  stages {
+    stage('Fetch code'){
+      steps {
+        git branch: 'main', url: 'https://github.com/sosotechnologies/docs_docker_io.git'
+      }
+    }
+
+
+    stage('Build App Image') {
+      steps {
+
+        script {
+            dockerImage = docker.build( sosoappRegistry + &quot;:$BUILD_NUMBER&quot;, &quot;./&quot;)
+             }
+
+     }
+
+    }
+
+    stage('Upload App Image') {
+          steps{
+            script {
+              docker.withRegistry( sosotechRegistry, JenkinsECRCredential ) {
+                dockerImage.push(&quot;$BUILD_NUMBER&quot;)
+                dockerImage.push('latest')
+              }
+            }
+          }
+     }
+
+  }
+}
+</code></pre>
+<ol>
+<li><strong><em>Building Sosotech Node App</em></strong></li>
+</ol>
+<pre><code class="language-Jenkinsfile">pipeline {
+    agent any
+
+    environment {
+        JenkinsECRCredential = 'ecr:us-east-1:sosoawstoken'
+        sosoappRegistry = &quot;088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository&quot;
+        sosotechRegistry = &quot;https://088789840359.dkr.ecr.us-east-1.amazonaws.com&quot;
+    }
+
+  stages {
+    stage('Fetch code'){
+      steps {
+        git branch: 'master', url: 'https://github.com/sosotechnologies/sosojenkins.git'
+      }
+    }
+
+
+    stage('Build App Image') {
+      steps {
+
+        script {
+            dockerImage = docker.build( sosoappRegistry + &quot;:$BUILD_NUMBER&quot;, &quot;./dockerhub-nodejs&quot;)
+             }
+
+     }
+
+    }
+
+    stage('Upload App Image') {
+          steps{
+            script {
+              docker.withRegistry( sosotechRegistry, JenkinsECRCredential ) {
+                dockerImage.push(&quot;$BUILD_NUMBER&quot;)
+                dockerImage.push('mkdocss')
+              }
+            }
+          }
+     }
+
+  }
+}
+
+</code></pre>
+<h4 id="build-triggers">Build Triggers</h4>
+<p>Requirements:
+- Set a New private Git Repo
+- Set a new ssh Key:  <code>ssh-keygen</code>
+- Get the content of your id_rsa.pub key: <code>cat ~/.ssh/id_rsa.pub</code>
+  - Register the id_rsa.pub in Github <strong><em>SSH and GPC Keys</em></strong>
+- Get the content of your id_rsa key: <code>cat ~/.ssh/id_rsa</code>
+  - Register the id_rsa key in Jenkins configure credentials.</p>
+<p><img alt="ssh-trigger" src="../cicd-photos/ssh-trigger.png" /></p>
+<p><strong><em>My repo is</em></strong>: git@github.com:sosotechnologies/sosojenkinstriggers.git</p>
+<p><strong><em>Add SSH Key to Github Settings</em></strong></p>
+<p><img alt="trigger" src="../cicd-photos/trigger.png" /></p>
+<p><strong><em>Make a dir mysosotriggers</em></strong>: <code>mkdir mysosotriggers</code></p>
+<p>hello-world/webapp/src/main/webapp/WEB-INF/
+<strong><em>Create a Jenkinsfile in mysosotriggers:</em></strong></p>
+<p><code>cd mysosotriggers</code>
+<code>git clone git@github.com:sosotechnologies/sosojenkinstriggers.git</code>
+<code>cd sosojenkinstriggers</code>
+<code>touch Jenkinsfile</code>
+<code>vi Jenkinsfile</code></p>
+<p><strong><em>Add this into the Jenkinsfile</em></strong></p>
+<pre><code class="language-Jenkinsfile">pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps{
+                sh 'echo &quot;Looks like the build is Done!&quot;'
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong><em>Create a Pipeline Job like in below photo:</em></strong></p>
+<p><img alt="trigger-job" src="../cicd-photos/trigger-job.png" /></p>
+<h5 id="github-webhook-jobs">GitHub webHook Jobs</h5>
+<p>Go to video 163</p>
+<h1 id="cicd-microservices">CICD MicroServices</h1>
+<h2 id="docker-server">Docker server</h2>
+<ul>
+<li>Ubuntu VERSION="20.04.6 LTS </li>
+<li>Create a New AWS instance. T3 medium</li>
+<li>During instance creation select option [Allow HTTP traffic from the internet]</li>
+<li>Storage should be 20Gb</li>
+<li>Add below script in the user data</li>
+</ul>
+<pre><code class="language-sh">#!/bin/bash
+
+# Install Docker
+sudo apt-get update
+   sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   echo \
+  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
+# Install Docker-Compose
+   sudo apt-get update
+   sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+   sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+
+# Add ubuntu user into Docker Group
+    sudo usermod -a -G docker ubuntu
+
+</code></pre>
+<p><strong><em>Clone the repo</em></strong>: <a href="https://github.com/sosotechnologies/cicd-microservices-dockercompose.git">Soso-repo</a></p>
+<pre><code>docker-compose build
+docker-compose up -d
+</code></pre>
+<p>For docker, see the official docker section in thus doc</p>
+<p><strong><em>If you ever encounter NO SPACE issue when building your image</em></strong></p>
+<pre><code>sudo docker image prune -f &amp;&amp; sudo docker container prune -f
+</code></pre>
+<h2 id="kubernetes">Kubernetes</h2>
+<ul>
+<li>KOPs</li>
+<li>EKS</li>
+<li>OpenShift</li>
+</ul>
+<h3 id="kops">KOPS</h3>
+<ul>
+<li>Ubuntu VERSION="20.04.6 LTS </li>
+<li>Installing kOps on Ubuntu</li>
+<li>Install Helm on the Ubuntu server</li>
+<li>install JDK-8 on server</li>
+<li>Create a directory called jenkins-slave in /opt</li>
+<li>Create a New(public) GitHub repo: Mine is: <a href="https://github.com/sosotechnologies/cicd-kubernetes-jenkins-pipeline.git">My repo</a></li>
+</ul>
+<p><strong><em>INSTALL JDK8 On the Jenkins Server</em></strong>
+In Server terminal, Install Maven and JDK8</p>
+<pre><code>sudo apt update
+sudo apt install openjdk-8-jdk -y
+</code></pre>
+<pre><code>curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '&quot;' -f 4)/kops-linux-amd64
+chmod +x ./kops
+sudo mv ./kops /usr/local/bin/
+</code></pre>
+<p><strong><em>Install Python PiP</em></strong></p>
+<pre><code>sudo apt -y update
+sudo apt install python3-pip
+</code></pre>
+<p><strong><em>Install AWSCli</em></strong></p>
+<pre><code> sudo apt  install awscli -y
+</code></pre>
+<p><strong><em>Install Kubectl</em></strong></p>
+<pre><code>curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+</code></pre>
+<p><strong><em>Create S3 Bucket</em></strong></p>
+<pre><code>aws s3 ls
+aws s3 mb s3://soso-kops-bucket.local
+</code></pre>
+<p><strong><em>OPTIONAL</em></strong></p>
+<pre><code>aws s3api create-bucket \
+    --bucket soso-kops-bucket \
+    --region us-east-1 
+</code></pre>
+<p><strong><em>Add env variables in bashrc</em></strong></p>
+<pre><code>vi .bashrc
+
+export NAME=soso-kops-bucket.k8s.local                               
+export KOPS_STATE_STORE=s3://soso-kops-bucket.local 
+
+source .bashrc
+</code></pre>
+<p><strong><em>Generate an sshkeys before creating cluster</em></strong></p>
+<pre><code>ssh-keygen
+</code></pre>
+<p><strong><em>Install Cluster preconfig file</em></strong></p>
+<pre><code>kops create cluster \
+    --name=${NAME} \
+    --cloud=aws \
+    --zones=us-west-2a \
+    --node-size t2.medium \
+    --master-size t2.medium \
+    --master-count 1 --node-size t2.medium --node-count=1
+</code></pre>
+<p><strong><em>Edit the cluster name- OPTIONAL</em></strong></p>
+<pre><code>kops edit cluster --name ${NAME}
+</code></pre>
+<p><strong><em>Install Cluster</em></strong></p>
+<pre><code>kops update cluster --name ${NAME} --yes --admin
+</code></pre>
+<p><strong>NOTE: WAIT 10 Mins before Checking Nodes and Validating cluster</strong>*</p>
+<p><strong><em>Get nodes</em></strong></p>
+<pre><code>kubectl get nodes
+</code></pre>
+<p><strong><em>Validate Cluster</em></strong></p>
+<pre><code>kops validate cluster --wait 10m
+</code></pre>
+<p><strong><em>Delete cluster - OPTIONAL</em></strong></p>
+<pre><code>kops delete cluster --name ${NAME}
+               [OR]
+kops delete cluster --name ${NAME} --yes
+</code></pre>
+<ul>
+<li><strong><em>Make directory /opt/jenkins-slave and give ownership to ubuntu</em></strong></li>
+<li><strong><em>Add Jenkins SG to Kops and Vice-Versa</em></strong></li>
+</ul>
+<pre><code>mkdir jenkins-slave
+sudo mkdir /opt/jenkins-slave
+sudo chown ubuntu.ubuntu /opt/jenkins-slave -R
+</code></pre>
+<h4 id="create-a-new-slave-node-in-jenkins">Create a new Slave Node in Jenkins</h4>
+<p><img alt="slave" src="../cicd-photos/slave.png" /></p>
+<p><strong><em>CICD Work Flow</em></strong>
+- Remove my helm and make your own helm directory in same path</p>
+<pre><code>mkdir cicd-k8s
+git clone https://github.com/sosotechnologies/cicd-kubernetes-jenkins-pipeline.git
+cd 
+</code></pre>
+<pre><code>mkdir helm &amp;&amp; cd helm
+helm create sosotechecharts
+</code></pre>
+<p>replace the yaml files in the template with our yaml files in: 
+cici-kubernetes-jenkins-pipeline/kubernetes/soso-app/templates</p>
+<pre><code>cd cici-kubernetes-jenkins-pipeline/helm/sosotechecharts/templates
+rm -rf *
+</code></pre>
+<p><strong><em>NOTE</em></strong>: Set the deployment Image as a variable. Name to what ever but take note
+of the Name, as this name will be passed as a tag when building the Helm Chart'</p>
+<p><img alt="app-variable" src="../cicd-photos/app-variable.png" /></p>
+<p><strong><em>Now install the Chart</em></strong>
+  - cd back into the helm directory and run below command
+  - create a namespace called <strong><em>cicd</em></strong>
+  - helm install --namespace cicd [nameof the chart] --set [the deployment variable]=[built image from dockerhub]</p>
+<pre><code>kubectl create ns cicd
+helm install --namespace cicd soso-helm-name --set sosodeploymentvariable=sosotech/sosowebapp:2
+helm list --namerpace cicd
+</code></pre>
+<p><strong><em>Delete the Chart</em></strong></p>
+<pre><code>helm delete soso-helm-name -n cicd
+</code></pre>
+<pre><code class="language-Jenkinsfile">pipeline {
+
+    agent any
+/*
+    tools {
+        maven &quot;maven3&quot;
+    }
+*/
+    environment {
+        registry = &quot;sosotech/docs-repo&quot;
+        registryCredential = 'sosodockertoken'
+    }
+
+    stages{
+
+        stage('BUILD'){
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+            post {
+                success {
+                    echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
+        }
+
+        stage('UNIT TEST'){
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('INTEGRATION TEST'){
+            steps {
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+
+        stage ('CODE ANALYSIS WITH CHECKSTYLE'){
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+            post {
+                success {
+                    echo 'Generated Analysis Result'
+                }
+            }
+        }
+
+
+        stage('Building image') {
+            steps{
+              script {
+                dockerImage = docker.build registry + &quot;:$BUILD_NUMBER&quot;
+              }
+            }
+        }
+
+        stage('Deploy Image') {
+          steps{
+            script {
+              docker.withRegistry( '', registryCredential ) {
+                dockerImage.push(&quot;$BUILD_NUMBER&quot;)
+                dockerImage.push('latest')
+              }
+            }
+          }
+        }
+
+        stage('Remove Unused docker image') {
+          steps{
+            sh &quot;docker rmi $registry:$BUILD_NUMBER&quot;
+          }
+        }
+
+        stage('CODE ANALYSIS with SONARQUBE') {
+
+            environment {
+                scannerHome = tool 'mysonarscanner4'
+            }
+
+            steps {
+                withSonarQubeEnv('sonar-pro') {
+                    sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
+                   -Dsonar.projectName=vprofile-repo \
+                   -Dsonar.projectVersion=1.0 \
+                   -Dsonar.sources=src/ \
+                   -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
+                   -Dsonar.junit.reportsPath=target/surefire-reports/ \
+                   -Dsonar.jacoco.reportsPath=target/jacoco.exec \
+                   -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
+                }
+
+                timeout(time: 10, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+        stage('Kubernetes Deploy') {
+      agent { label 'KOPS' }
+            steps {
+                    sh &quot;helm upgrade --install --force vproifle-stack helm/sosotechecharts --set appimage=${registry}:${BUILD_NUMBER} --namespace prod&quot;
+            }
+        }
+
+    }
+
+
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../Getting-Started/remote-install/" class="btn btn-neutral float-left" title="Remote Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Cloud-Technologies/intro-aws/" class="btn btn-neutral float-right" title="AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../Getting-Started/remote-install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Cloud-Technologies/intro-aws/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

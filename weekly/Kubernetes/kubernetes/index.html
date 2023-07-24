@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Kubernetes/kubernetes/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Minikube - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Minikube";
+        var mkdocs_page_input_path = "weekly\\Kubernetes\\kubernetes.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Kubernetes/kubernetes/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Minikube</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Kubernetes/kubernetes.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="minikube">Minikube</h1>
+<pre><code>choco install minikube
+minikube start
+</code></pre>
+<pre><code>kubectl config get-contexts
+kubectl config use-context  docker-desktop
+</code></pre>
+<h1 id="kops">KOPS</h1>
+<p><strong><em>Installing kOps</em></strong></p>
+<pre><code>curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '&quot;' -f 4)/kops-linux-amd64
+chmod +x ./kops
+sudo mv ./kops /usr/local/bin/
+</code></pre>
+<p><strong><em>Install Python PiP</em></strong></p>
+<pre><code>sudo apt -y update
+sudo apt install python3-pip
+</code></pre>
+<p><strong><em>Install AWSCli</em></strong></p>
+<pre><code> sudo apt  install awscli -y
+</code></pre>
+<p><strong><em>Install Kubectl</em></strong></p>
+<pre><code>curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+</code></pre>
+<p><strong><em>Create S3 Bucket</em></strong></p>
+<pre><code>aws s3 ls
+aws s3 mb s3://soso-kops-bucket.local
+</code></pre>
+<p><strong><em>OPTIONAL</em></strong></p>
+<pre><code>aws s3api create-bucket \
+    --bucket soso-kops-bucket \
+    --region us-east-1 
+</code></pre>
+<p><strong><em>Add env variables in bashrc</em></strong></p>
+<pre><code>vi .bashrc
+
+export NAME=soso-kops-bucket.k8s.local                               
+export KOPS_STATE_STORE=s3://soso-kops-bucket.local 
+
+source .bashrc
+</code></pre>
+<p><strong><em>Generate an sshkeys before creating cluster</em></strong></p>
+<pre><code>ssh-keygen
+</code></pre>
+<p><strong><em>Install Cluster preconfig file</em></strong></p>
+<pre><code>kops create cluster \
+    --name=${NAME} \
+    --cloud=aws \
+    --zones=us-west-2a \
+    --node-size t2.medium \
+    --master-size t2.medium \
+    --master-count 1 --node-size t2.medium --node-count=1
+</code></pre>
+<p><strong><em>Edit the cluster name- OPTIONAL</em></strong></p>
+<pre><code>kops edit cluster --name ${NAME}
+</code></pre>
+<p><strong><em>Install Cluster</em></strong></p>
+<pre><code>kops update cluster --name ${NAME} --yes --admin
+</code></pre>
+<p><strong>NOTE: WAIT 10 Mins before Checking Nodes and Validating cluster</strong>*</p>
+<p><strong><em>Get nodes</em></strong></p>
+<pre><code>kubectl get nodes
+</code></pre>
+<p><strong><em>Validate Cluster</em></strong></p>
+<pre><code>kops validate cluster --wait 10m
+</code></pre>
+<p><strong><em>Delete cluster</em></strong></p>
+<pre><code>kops delete cluster --name ${NAME}
+               [OR]
+kops delete cluster --name ${NAME} --yes
+</code></pre>
+<p>To deploy EFS-EKS-using Terraform, <a href="terraform-EFS-Dynamic">clone My repo</a></p>
+<p>You can clone and build this Documentation and use the image <a href="https://github.com/sosotechnologies/docs_docker_io">mkdocs-docker-build</a></p>
+<h2 id="eks">EKS</h2>
+<ul>
+<li>AWS Linux 2 AMD x86_64</li>
+<li>Install AWSCLI </li>
+<li>Install Kubectl version 1.23</li>
+<li>EKS Version installed 1.24</li>
+<li>Install Git</li>
+<li>Install Terraform</li>
+<li>Configure AWS</li>
+<li>Install Helm</li>
+</ul>
+<h3 id="install-awscli">Install AWSCLI</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>curl &quot;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&quot; -o &quot;awscliv2.zip&quot;
+unzip awscliv2.zip
+sudo ./aws/install
+</code></pre>
+<h3 id="install-kubectl-version-123">Install Kubectl version 1.23</h3>
+<p><a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Right-Click to open Link in a New Tab</a></p>
+<pre><code>kubectl version --short --client
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin &amp;&amp; cp ./kubectl $HOME/bin/kubectl &amp;&amp; export PATH=$PATH:$HOME/bin
+</code></pre>
+<h3 id="install-terraform">Install Terraform</h3>
+<ul>
+<li><a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<h3 id="install-git">Install Git</h3>
+<pre><code>Suso yum install git -y
+</code></pre>
+<h3 id="install-helm">Install HelM</h3>
+<ul>
+<li><a href="https://helm.sh/docs/intro/install/">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+</code></pre>
+<h3 id="configure-kubeconfig">Configure KubeConfig</h3>
+<pre><code>aws eks update-kubeconfig --region us-east-1 --name DevOps-prod-SoSo-Eks
+</code></pre>
+<pre><code>kubectl apply -f .
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

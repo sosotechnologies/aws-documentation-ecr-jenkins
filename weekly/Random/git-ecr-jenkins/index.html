@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Random/git-ecr-jenkins/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>ECR-Jenkins - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ECR-Jenkins";
+        var mkdocs_page_input_path = "weekly\\Random\\git-ecr-jenkins.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Random/git-ecr-jenkins/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Random Topics</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">ECR-Jenkins</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#use-iacterraform-to-setup-the-required-ingrastructures-ec2-iam-eks">Use IaC(terraform) to setup the required ingrastructures "EC2, IAM, EKS"</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#install-jenkins-server">install jenkins server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#install-docker">Install Docker</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#install-git">Install Git</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-jenkins-user-to-the-docker-group">Add Jenkins user to the Docker Group</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#restart-the-jenkins-server">restart the Jenkins server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reload-the-system-daemon">Reload the system Daemon</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#restart-the-docker-service">Restart the Docker Service</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-to-the-jenkins-ui-and-install-these-2-plugins">Return to the Jenkins UI and install these 2 plugins:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-iam-role-and-and-attach-to-instance-to-give-instance-ecr-permissions">Update IAM role and and attach to instance, To Give instance ECR permissions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-ecr-repo-vis-same-link-scroll-to-bottom-of-the-page">Create ECR Repo vis same link, scroll to bottom of the page</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#check-authentication-to-ecr">Check authentication to ECR</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#build-and-push-docker">Build and Push Docker</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#install-aws-cloudbees-aws-credentials-plugin-and-configure">Install AWS [ CloudBees AWS Credentials ] Plugin and configure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setup-aws-credentials-get-your-aws-access-key-id-secret-access-key">setup aws credentials, get your AWS Access Key ID &amp; Secret Access Key</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-new-pipeline-job-using-below-pipeline-script-with-my-aws-creds">Create new Pipeline Job using below pipeline script with my aws creds</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bonus">Bonus!!!</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#simple-jenkins-pipeline-scripts-for-aws">Simple Jenkins pipeline Scripts for AWS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline-version-2">Pipeline version 2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline-version-3">Pipeline version 3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline-version-4">Pipeline version 4</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline-version-5">Pipeline version 5</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pipeline-version-6">Pipeline version 6</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+          <li>Random Topics &raquo;</li>
+      <li>ECR-Jenkins</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Random/git-ecr-jenkins.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="what-are-we-going-to-achieve-here">What are we going to achieve here?</h1>
+<p>Our developers have written some java base web-app and they are pushing that 
+code to a git repo.
+We need a DevOps envineer who will comein and help setup our infrastruucture, 
+Build an automation mechanish, that we can
+utilize to integrate this code for testing, Deliver, Deployment. 
+Also, we will need these artifacts to be built into containerized application, build an ocastration and deploy this
+app to our end users.</p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>
+<h3 id="use-iacterraform-to-setup-the-required-ingrastructures-ec2-iam-eks">Use IaC(terraform) to setup the required ingrastructures "EC2, IAM, EKS"</h3>
+<p>install terraform: <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">Link</a></p>
+</li>
+<li>
+<h3 id="install-jenkins-server">install jenkins server</h3>
+<p>install jenkins server <a href="https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/">Link</a></p>
+</li>
+<li>
+<h3 id="install-docker">Install Docker</h3>
+<p>Install Docker <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html">Link</a></p>
+</li>
+<li>
+<h3 id="install-git">Install Git</h3>
+<p><code>sudo yum install git -y</code></p>
+</li>
+<li>
+<h3 id="add-jenkins-user-to-the-docker-group">Add Jenkins user to the Docker Group</h3>
+<p><code>sudo usermod –aG docker sosojenkinsadmin</code>  OR  <code>sudo usermod –a -G docker jenkins</code></p>
+</li>
+<li>
+<h3 id="restart-the-jenkins-server">restart the Jenkins server</h3>
+<p><code>sudo service jenkins restart</code></p>
+</li>
+<li>
+<h3 id="reload-the-system-daemon">Reload the system Daemon</h3>
+<p><code>sudo systemctl daemon-reload</code></p>
+</li>
+<li>
+<h3 id="restart-the-docker-service">Restart the Docker Service</h3>
+<p><code>sudo service docker restart</code></p>
+</li>
+<li>
+<h3 id="return-to-the-jenkins-ui-and-install-these-2-plugins">Return to the Jenkins UI and install these 2 plugins:</h3>
+<p>Install the pluginn called <strong><em>Docker</em></strong> and <strong><em>Docker Pipeline</em></strong></p>
+</li>
+<li>
+<h3 id="update-iam-role-and-and-attach-to-instance-to-give-instance-ecr-permissions">Update IAM role and and attach to instance, To Give instance ECR permissions</h3>
+<p>Create an IAM role with Admin Or with the needed permissions for ECR and other services.</p>
+</li>
+<li>
+<h3 id="create-ecr-repo-vis-same-link-scroll-to-bottom-of-the-page">Create ECR Repo vis same link, scroll to bottom of the page</h3>
+<p><code>aws ecr create-repository --repository-name soso-repository --region us-east-1</code></p>
+</li>
+</ol>
+<p>When you create the ECR, go to the ECR in AWS Console and retreive the commands to push image.
+See the link for Creating a container image: <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html">Link</a></p>
+<ol>
+<li>
+<h3 id="check-authentication-to-ecr">Check authentication to ECR</h3>
+check to see if you can successfully login to ecr [my example ecr code below, USE YOURS ], you have to be root, </li>
+</ol>
+<pre><code>sudo su -
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 088789840359.dkr.ecr.us-east-1.amazonaws.com
+</code></pre>
+<ol>
+<li>
+<h3 id="build-and-push-docker">Build and Push Docker</h3>
+<code>sudo docker build -t sosodocs .</code></li>
+</ol>
+<p><strong><em>Tag the sosodoc image</em></strong></p>
+<p><code>sudo docker tag sosodocs 088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository:mkdocs-v1</code></p>
+<p><strong><em>Push image to repo</em></strong></p>
+<p><code>sudo docker push 088789840359.dkr.ecr.us-east-1.amazonaws.com/soso-repository:mkdocs-v1</code></p>
+<ol>
+<li>
+<h3 id="install-aws-cloudbees-aws-credentials-plugin-and-configure">Install AWS [ CloudBees AWS Credentials ] Plugin and configure</h3>
+<p><strong><em>Dashboard</em></strong> --&gt; <strong><em>Manage Jenkins</em></strong> --&gt; <strong><em>Plugin Manager</em></strong></p>
+</li>
+<li>
+<h3 id="setup-aws-credentials-get-your-aws-access-key-id-secret-access-key">setup aws credentials, get your AWS Access Key ID &amp; Secret Access Key</h3>
+</li>
+<li>Create an AWS User called: jenkins</li>
+<li>Give this user permission to ECR: AmazonEC2ContainerRegistryFullAccess and AmazonECS_FullAccess</li>
+<li>Create/Download the Access-key for this user.</li>
+</ol>
+<p>Dashboard --&gt; Manage Jenkins --&gt; Manage Credentials --&gt; System --&gt; Global credentials (unrestricted)
+    AWS Credentials
+          |_ID
+          |_Description
+          |_Access Key ID
+          |_Secret Access Key</p>
+<ol>
+<li>
+<h3 id="create-new-pipeline-job-using-below-pipeline-script-with-my-aws-creds">Create new Pipeline Job using below pipeline script with my aws creds</h3>
+</li>
+<li>use pool scm * <em> * </em> *</li>
+</ol>
+<pre><code class="language-sh">pipeline {
+    agent any
+    environment {
+        AWS_ACCOUNT_ID=&quot;088789840359&quot;
+        AWS_DEFAULT_REGION=&quot;us-east-1&quot;
+        IMAGE_REPO_NAME=&quot;soso-repository&quot;
+        IMAGE_TAG=&quot;latest&quot;
+        REPOSITORY_URI = &quot;${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}&quot;
+    }
+
+    stages {
+
+         stage('Logging into AWS ECR') {
+            steps {
+                script {
+                sh &quot;aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com&quot;
+                }
+
+            }
+        }
+
+        stage('Cloning Git') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/sosotechnologies/aws-nodeJs-ecr-jenkins.git']]])
+            }
+        }
+
+    // Building Docker images
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build &quot;${IMAGE_REPO_NAME}:${IMAGE_TAG}&quot;
+        }
+      }
+    }
+
+    // Uploading Docker images into AWS ECR
+    stage('Pushing to ECR') {
+     steps{  
+         script {
+                sh &quot;docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} ${REPOSITORY_URI}:$IMAGE_TAG&quot;
+                sh &quot;docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}&quot;
+         }
+        }
+      }
+    }
+}
+</code></pre>
+<h2 id="bonus">Bonus!!!</h2>
+<p>Test your pipeline with example codes</p>
+<h3 id="simple-jenkins-pipeline-scripts-for-aws">Simple Jenkins pipeline Scripts for AWS</h3>
+<p>Pipeline version 1</p>
+<pre><code>pipeline {
+  agent any
+  stages {
+    stage('Welcome to sosotech') {
+      steps {
+        sh '''
+          aws --version
+        '''
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="pipeline-version-2">Pipeline version 2</h3>
+<pre><code>pipeline {
+  agent any
+  stages {
+    stage('Welcome to sosotech') {
+      steps {
+        sh '''
+          aws --version
+          aws ec2 describe-instances
+        '''
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="pipeline-version-3">Pipeline version 3</h3>
+<pre><code>pipeline {
+  agent any
+  environment {
+    AWS_DEFAULT_REGION=&quot;us-east-1&quot;
+  }
+  stages {
+    stage('Welcome to sosotech') {
+      steps {
+        sh '''
+          aws --version
+          aws ec2 describe-instances --filters &quot;Name=instance-type,Values=t2.micro&quot; --query &quot;Reservations[].Instances[].InstanceId&quot;
+        '''
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="pipeline-version-4">Pipeline version 4</h3>
+<pre><code>pipeline {
+  agent any
+  environment {
+    AWS_DEFAULT_REGION=&quot;us-east-1&quot;
+  }
+  stages {
+    stage('Welcome to sosotech') {
+      steps {
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'all-in-one-devops', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+          sh '''
+            aws --version
+            aws ec2 describe-instances --filters &quot;Name=instance-type,Values=t2.micro&quot; --query &quot;Reservations[].Instances[].InstanceId&quot;
+          '''
+        }
+      }
+    }
+  }
+}
+
+
+</code></pre>
+<h3 id="pipeline-version-5">Pipeline version 5</h3>
+<p>For this step, i'll list buckets</p>
+<pre><code>pipeline {
+  agent any
+  environment {
+    AWS_DEFAULT_REGION=&quot;us-east-1&quot;
+  }
+  stages {
+    stage('Welcome to sosotech') {
+      steps {
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'all-in-one-devops', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+          sh '''
+            aws --version
+            aws s3api list-buckets --query &quot;Buckets[].Name&quot;
+          '''
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="pipeline-version-6">Pipeline version 6</h3>
+<p>For this step, i'll create an IRSA and save IAM role in Jenkins credentials as 'irsa-creds'</p>
+<pre><code>pipeline {
+  agent any
+  environment {
+    AWS_DEFAULT_REGION=&quot;us-east-1&quot;
+    WE_KNOW_TECHNOLOGY=credentials('irsa-creds')
+  }
+  stages {
+    stage('Hello') {
+      steps {
+        sh '''
+          aws --version
+          aws ec2 describe-instances --filters &quot;Name=instance-type,Values=t2.micro&quot; --query &quot;Reservations[].Instances[].InstanceId&quot;
+        '''
+      }
+    }
+  }
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../eks-iam/" class="btn btn-neutral float-left" title="EKS-IAM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Helm-Terraform-jenkins/" class="btn btn-neutral float-right" title="Helm-Terraform-jenkins">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../eks-iam/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Helm-Terraform-jenkins/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

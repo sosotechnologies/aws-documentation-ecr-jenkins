@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Openshift/openshift/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>OpenShift - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OpenShift";
+        var mkdocs_page_input_path = "weekly\\Openshift\\openshift.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Openshift/openshift/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">OpenShift</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-steps">Getting Started - Steps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-openshift-on-aws">Install OpenShift on AWS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-the-cluster">Install the cluster</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#working-on-cluster">Working on cluster</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>OpenShift</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Openshift/openshift.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="whats-red-hat-openshift">What's Red Hat OpenShift</h1>
+<p>Red Hat OpenShift, the industry's leading hybrid cloud application platform powered by Kubernetes, 
+brings together tested and trusted services to reduce the friction of developing, modernizing,
+deploying, running, and managing applications. 
+See official link: <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Openshift</a></p>
+<h2 id="getting-started-steps">Getting Started - Steps</h2>
+<ul>
+<li>Signup/signin to Openshift account: <a href="https://cloud.redhat.com/openshift/install">See-Link</a></li>
+<li>Navigate to: Clusters -&gt; Cluster Type -&gt; Amazon Web Services -&gt; Installer-provisioned infrastructure
+   <img alt="openshift" src="../photos/install.png" /></li>
+</ul>
+<p><strong><em>Install OpenShift on AWS with user-provisioned infrastructure</em></strong>
+ Select the option [Full control]</p>
+<p>See the site: <a href="https://console.redhat.com/openshift/install/aws/user-provisioned">/openshift/install/aws</a></p>
+<p><img alt="openshift" src="photos/openshiftl0.png" /></p>
+<h3 id="install-openshift-on-aws">Install OpenShift on AWS</h3>
+<ul>
+<li>Setup an AWS Instance and add security group number [6443]</li>
+<li>Setup a Route53 DNS</li>
+<li><strong><em>make</em></strong> a new directory for the installation, mine is soso-dir</li>
+</ul>
+<p><code>mkdir soso-dir/</code></p>
+<p>AWS Openshift installation Link: <a href="https://console.redhat.com/openshift/install/aws/installer-provisioned">See-Link</a>
+There are <strong><em>Two</em></strong> Cluster-Setup options to choose: a customized cluster <strong><em>or</em></strong> quickly install.</p>
+<ul>
+<li>Install the Openshift installer and client on your local computer.</li>
+<li>Move that file to your remote linux machine. You're see the client and installer.</li>
+<li>
+<p>Extract the installer and client: </p>
+<p><code>tar xvf openshift-install-linux.tar.gz</code>
+ <code>tar xvf openshift-client-linux.tar.gz</code></p>
+</li>
+<li>
+<p>Move the oc, kubectl and installer to usr/bin directoory</p>
+<p><code>sudo mv oc /usr/local/bin/
+sudo mv kubectl /usr/local/bin/
+sudo cp openshift-install /usr/local/bin/
+sudo cp openshift-install /root/
+which openshift-install
+oc help</code></p>
+<p><strong><em>Install AWSCLI</em></strong></p>
+<p><code>curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install</code></p>
+</li>
+<li>
+<p>Copy the secret content and paste in a file. This secret is from the redhad account, 
+    used to Map the AWS Cluster with the redHat account.</p>
+</li>
+<li>
+<p><strong><em>In the AWS Console, setup the following:</em></strong></p>
+<ul>
+<li>Route53 public Hoster Zone</li>
+<li>Add OpenShift port 6443 to instance security groups</li>
+<li>
+<p>Create </p>
+<ul>
+<li>Create Access and Secret Keys for the Root-user and configure aws</li>
+</ul>
+<p><code>aws configure</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>CD to <strong><em>ROOT</em></strong> and Create an SSH Key in the root directory</p>
+<p><code>sudo su -</code></p>
+<p><code>ssh-keygen -t rsa -b 4096 -N '' -f id_rsa</code></p>
+</li>
+<li>
+<p>Evaluate and add to root. This will starts ssh-agent and configures the 
+  environment (via eval) of the running shell to point to that agent.</p>
+<p><code>eval "$(ssh-agent -s)"
+ssh-add /root/id_rsa</code></p>
+</li>
+<li>
+<p>Now start the prompt to install Openshift</p>
+</li>
+<li>
+<p><strong><em>install Openshift using the config, so you can customize</em></strong>. 
+    A prompt will begin. The last prompt will be the secret
+    Copy and paste the secret characters that we had saved earlier.</p>
+<ul>
+<li><code>openshift-install create install-config</code> </li>
+</ul>
+</li>
+<li>
+<p>OPTIONAL: Make a copy of the file: </p>
+</li>
+</ul>
+<p><code>cp -r install-config.yaml soso-config.yaml</code></p>
+<ul>
+<li>paste the below content in the file. edit the file to suite ur options.
+  <strong><em>Note</em></strong>: Two keys will be added to the yaml file:</li>
+<li>The sshKey: <code>cat id_rsa.pub</code></li>
+<li>The openShift Key we copied and pasted.</li>
+</ul>
+<pre><code class="language-yaml">apiVersion: v1
+baseDomain: macazzzzz.com
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      zones:
+      - us-east-1a
+      #- us-east-1b
+      #- us-east-1c
+      rootVolume:
+        size: 100
+        type: gp2
+      type: m4.xlarge
+  replicas: 3
+compute:
+- hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      zones:
+      - us-east-1a
+      #- us-east-1b
+      #- us-east-1c
+      rootVolume:
+        size: 100
+        type: gp2
+      type: m4.xlarge
+  replicas: 1
+metadata:
+  name: openshift
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 192.168.0.0/20
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: us-east-1
+    userTags:
+      adminContact: Collins
+      costCenter: 123
+      email: cafanwi@sosotechnologies.com
+publish: External
+pullSecret: ''
+sshKey: 
+</code></pre>
+<h3 id="install-the-cluster">Install the cluster</h3>
+<p>In the same directory of the openshift-install file, Run command to install:</p>
+<pre><code>openshift-install create cluster --log-level debug
+</code></pre>
+<p>***Cluster done installing, you should see as below image, your creds and url.
+<img alt="openshift" src="photos/install12.png" /></p>
+<p>After installation, you should have your results as seen in the below image:
+  <img alt="openshift" src="../photos/install1.png" /></p>
+<p><strong><em>Cat and export the konfig file</em></strong></p>
+<p><code>cat auth/kubeconfig
+    export KUBECONFIG=/root/auth/kubeconfig
+    oc whoami</code></p>
+<p><strong><em>Get Cluster URL with the below command</em></strong></p>
+<pre><code> oc cluster-info
+ cd auth/
+</code></pre>
+<h3 id="working-on-cluster">Working on cluster</h3>
+<p>Some command commands:
+<strong><em>Create a new project called soso-project</em></strong></p>
+<pre><code>oc new-project soso-project --display-name 'Soso Project'
+oc project soso-project
+</code></pre>
+<p><strong>Sample use case:</strong>
+- Clone this repo: <a href="https://github.com/sosotechnologies/docs_docker_io">My docs dockerfile repo</a>
+- Install Docker on terminal
+- Create a repo in Dockerdesktop called:  sosotech/docs-repo-sosodocs</p>
+<p><code>docker build -t sosodocs .</code></p>
+<p><code>docker tag sosodocs sosotech/docs-repo/sosodocs:v1</code></p>
+<p><code>oc cluster-info</code></p>
+<p><strong><em>Openshift Image</em></strong></p>
+<pre><code>oc get is
+oc new-app --image=&quot;sosotech/docs-repo/sosodocs:v1&quot; --as-deployment-config
+oc expose service/docs-repo-sosodocs
+
+</code></pre>
+<p><strong><em>OTHER COMMANDS</em></strong>
+1. Delete image string called: macaz
+<code>oc delete is macaz</code></p>
+<p><strong>Sample use case:</strong>
+- Clone this repo: <a href="https://github.com/sosotechnologies/docs_docker_io">My docs dockerfile repo</a>
+- Install Docker/podman:  </p>
+<p><code>docker build -t sosodocs .</code></p>
+<p><code>oc cluster-info</code></p>
+<p><code>sudo docker tag sosodocs default-route-openshift-image-registry.apps.openshift.macazzz.com/sosorepo:v1</code></p>
+<p><code>docker login</code></p>
+<p><code>docker search registry.redhat.io/nginx</code></p>
+<p>For more commands on OpenShift: <a href="https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/developer-cli-commands.html">See the developer-cli-commands Link</a></p>
+<p>AWS Openshift installation Link: <a href="https://docs.openshift.com/container-platform/4.1/installing/installing_aws/installing-aws-account.html">See-Link</a></p>
+<p><code>./openshift-install create cluster --dir /root/ --log-level debug</code> </p>
+<p>### Destroy the cluster</p>
+<p><code>./openshift-install destroy cluster --dir /root/ --log-level debug</code> </p>
+<p><a href="https://console.redhat.com/openshift"><strong><em>web console Link:</em></strong> </a></p>
+<p>https://console-openshift-console.apps.openshift.macazzz.com/k8s/ns/soso-project/image.openshift.io~v1~ImageStream
+kubeadmin
+7JdHf-X34nV-ubmSh-ijSA4</p>
+<p>docker-registry-default.127.0.0.1.nip.io</p>
+<p><a href="https://console-openshift-console.apps.openshift.macazzz.com/deploy-image/ns/soso-project">Deploy Image</a></p>
+<p><strong><em>Docker config path</em></strong></p>
+<pre><code>sudo vi /root/.docker/config.json
+</code></pre>
+<p><strong><em>OC TROUBLESHOOT</em></strong>
+oc get service -n default  kubernetes -o 'jsonpath={.spec.clusterIP}'</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Azure/azure/" class="btn btn-neutral float-left" title="Azure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../web-development/web-dev/" class="btn btn-neutral float-right" title="Web Development">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Azure/azure/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../web-development/web-dev/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

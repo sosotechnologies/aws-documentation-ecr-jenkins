@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/Getting-Started/remote-install/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Remote Installation - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Remote Installation";
+        var mkdocs_page_input_path = "Getting-Started\\remote-install.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/Getting-Started/remote-install/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Remote Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation-links">Installation links</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-iam-eks-authenticator">Install IAM EKS authenticator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-docker-in-ec2">Install docker in ec2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-awscli">Install AWSCLI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-terraform">Install Terraform</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-kubens-kubectx">Install Kubens + kubectx</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-helm">Install HelM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-kubectl">Install Kubectl</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-mkdocs">Install MkDocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-pip-on-rhel">Install PiP on RHeL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-python-pip-in-ubuntu">Install python-pip in ubuntu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-trivy">Install Trivy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-kops-on-ubuntu">Install KOPs on Ubuntu</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../weekly/Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../weekly/Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../weekly/mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../weekly/Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Getting Started &raquo;</li>
+      <li>Remote Installation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/Getting-Started/remote-install.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="remote-server">Remote Server</h1>
+<h2 id="installation-links">Installation links</h2>
+<h3 id="install-iam-eks-authenticator">Install IAM EKS authenticator</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
+chmod +x ./aws-iam-authenticator
+sudo mv ./aws-iam-authenticator /usr/local/bin
+aws-iam-authenticator help
+</code></pre>
+<h3 id="install-docker-in-ec2">Install docker in ec2</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<h3 id="install-awscli">Install AWSCLI</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<p><strong><em>Install AWCLI on Ubuntu</em></strong></p>
+<pre><code>sudo apt update -y
+sudo apt install awscli -y
+</code></pre>
+<h3 id="install-terraform">Install Terraform</h3>
+<ul>
+<li><a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<h3 id="install-kubens-kubectx">Install Kubens + kubectx</h3>
+<ul>
+<li><a href="https://github.com/ahmetb/kubectx#installation">Right-Click to open Link in a New Tab</a> </li>
+</ul>
+<h3 id="install-helm">Install HelM</h3>
+<ul>
+<li><a href="https://helm.sh/docs/intro/install/">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+</code></pre>
+<h3 id="install-kubectl">Install Kubectl</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin &amp;&amp; cp ./kubectl $HOME/bin/kubectl &amp;&amp; export PATH=$PATH:$HOME/bin
+
+***More Troubleshooting Options***
+
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+[OR] sudo install -o root -g root -m 0755 kubectl /home/ec2-user/bin/kubectl
+kubectl version --client --output=yaml
+</code></pre>
+<h3 id="install-mkdocs">Install MkDocs</h3>
+<ul>
+<li><a href="https://www.mkdocs.org/user-guide/installation/">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>pip install mkdocs
+mkdocs helm
+mkdocs new my-soso-package
+cd my-soso-package
+tree
+</code></pre>
+<h3 id="install-pip-on-rhel">Install PiP on RHeL</h3>
+<pre><code>REDHAT
+sudo yum info python*-pip     //get the pip version, then install the version
+sudo yum install python3-pip
+python3 --version
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+</code></pre>
+<h3 id="install-python-pip-in-ubuntu">Install python-pip in ubuntu</h3>
+<pre><code>sudo apt install python3-pip
+</code></pre>
+<h3 id="install-trivy">Install Trivy</h3>
+<ul>
+<li><a href="https://aquasecurity.github.io/trivy/v0.18.3/installation/">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<pre><code>sudo yum -y update
+
+sudo wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.deb
+sudo dpkg -i trivy_0.18.3_Linux-64bit.deb
+trivy i nginx    //scanning nginx image
+trivy i nginx | grep -i critical
+trivy i nginx:alpine | grep -i critical
+</code></pre>
+<h3 id="install-kops-on-ubuntu">Install KOPs on Ubuntu</h3>
+<ul>
+<li><a href="https://kops.sigs.k8s.io/getting_started/aws/">Right-Click to open Link in a New Tab</a></li>
+</ul>
+<p><strong><em>Add KOPS User</em></strong></p>
+<pre><code>sudo adduser kops
+sudo echo &quot;kops  ALL=(ALL) NOPASSWD:ALL&quot; | sudo tee /etc/sudoers.d/kops
+sudo su - kops
+</code></pre>
+<p><strong><em>Installing kOps</em></strong></p>
+<pre><code>curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '&quot;' -f 4)/kops-linux-amd64
+chmod +x ./kops
+sudo mv ./kops /usr/local/bin/
+</code></pre>
+<p><strong><em>Install Python PiP</em></strong></p>
+<pre><code>sudo apt -y update
+sudo apt install python3-pip
+</code></pre>
+<p><strong><em>Install AWSCli</em></strong></p>
+<pre><code> sudo apt  install awscli -y
+</code></pre>
+<p><strong><em>Install Kubectl</em></strong></p>
+<pre><code>curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+</code></pre>
+<p><strong><em>Create S3 Bucket</em></strong></p>
+<pre><code>aws s3 ls
+
+aws s3api create-bucket \
+    --bucket soso-kops-bucket \
+    --region us-east-1 \
+    --acl public-read
+</code></pre>
+<p><strong><em>Add env variables in bashrc</em></strong></p>
+<pre><code>vi .bashrc
+
+export NAME=soso-kops-bucket.k8s.local                               
+export KOPS_STATE_STORE=s3://soso-kops-bucket.local 
+
+source .bashrc
+</code></pre>
+<p><strong><em>Generate an sshkeys before creating cluster</em></strong></p>
+<pre><code>ssh-keygen
+</code></pre>
+<p><strong><em>Install Cluster preconfig file</em></strong></p>
+<pre><code>kops create cluster \
+    --name=${NAME} \
+    --cloud=aws \
+    --zones=us-west-2a \
+    --discovery-store=s3://soso-kops-bucket/${NAME}/discovery
+</code></pre>
+<p><strong><em>Edit the cluster name- OPTIONAL</em></strong></p>
+<pre><code>kops edit cluster --name ${NAME}
+</code></pre>
+<p><strong><em>Install Cluster</em></strong></p>
+<pre><code>kops update cluster --name ${NAME} --yes --admin
+</code></pre>
+<p><strong>NOTE: WAIT 10 Mins before Checking Nodes and Validating cluster</strong>*</p>
+<p><strong><em>Get nodes</em></strong></p>
+<pre><code>kubectl get nodes
+</code></pre>
+<p><strong><em>Validate Cluster</em></strong></p>
+<pre><code>kops validate cluster --wait 10m
+</code></pre>
+<p><strong><em>Delete cluster</em></strong></p>
+<pre><code>kops delete cluster --name ${NAME}
+               [OR]
+kops delete cluster --name ${NAME} --yes
+</code></pre>
+<p><strong><em>Install pyton and pup on libux AWS</em></strong></p>
+<pre><code>python --version
+sudo yum install python37
+python3 --version
+</code></pre>
+<p><strong><em>To install pip and the EB CLI</em></strong></p>
+<pre><code>curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+
+echo $SHELL
+
+ls -a ~
+
+export PATH=/bin/bash:$PATH
+
+source .bashrc
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../local-install/" class="btn btn-neutral float-left" title="Local-Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../weekly/CICD/cicd/" class="btn btn-neutral float-right" title="CICD">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../local-install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../weekly/CICD/cicd/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../assets/javascripts/extra.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

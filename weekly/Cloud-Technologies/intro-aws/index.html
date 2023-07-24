@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Cloud-Technologies/intro-aws/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>AWS - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AWS";
+        var mkdocs_page_input_path = "weekly\\Cloud-Technologies\\intro-aws.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Cloud-Technologies/intro-aws/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Cloud Technologies</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">AWS</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-cloud-computing">What is Cloud Computing?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#types-of-cloud-computing">Types of cloud computing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#components-of-cloud-infrastructure">Components of cloud infrastructure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#service-models">Service Models</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#top-benefits-of-cloud-computing">Top benefits of cloud computing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#focus-aws-cloud">FOCUS: AWS CLOUD</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+          <li>Cloud Technologies &raquo;</li>
+      <li>AWS</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Cloud-Technologies/intro-aws.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cloud-technologies">Cloud Technologies</h1>
+<ul>
+<li>Defining cloud computing</li>
+<li>Defining private, public, and hybrid cloud<ul>
+<li>Exploring the components of cloud infrastructure</li>
+<li>Defining the different Service Models</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-is-cloud-computing">What is Cloud Computing?</h2>
+<p>Cloud computing is the use of hosted services, such as servers, data storage, databases, software, and networking over the internet¬ — instead of directly accessing your computer hard drive.</p>
+<h3 id="types-of-cloud-computing">Types of cloud computing</h3>
+<p>Cloud computing is offered in 3 major forms: private, public, and hybrid cloud.
+<img alt="cloud1" src="../photos/cloud1.png" /></p>
+<ul>
+<li>Private Cloud: 
+  The private cloud computing service is a cloud computing model
+  where the infrastructure is dedicated only to select users instead
+  of the general public, either over the Internet or a private internal
+  network. Other names for the private cloud are internal or corporate cloud.
+  Some private cloud providers are VMware-vRealize Suite Cloud Management 
+  Platform, AWS-Virtual Private Cloud, Microsoft-Azure Private Cloud…</li>
+<li>Public Cloud: 
+  The public cloud is defined as computing services offered by third-party
+  providers over the public Internet, making them available to anyone who 
+  wants to use or purchase them. They may be free or sold on-demand, allowing 
+  customers to pay only per usage for the CPU cycles, storage, or bandwidth they 
+  consume. Some public cloud services are AWS, GCP, Azure, IBM Cloud, Alibaba Cloud…</li>
+<li>Hybrid Cloud:
+  A hybrid cloud is a computing environment that combines an on-premises data center 
+  (also called a private cloud) with a public cloud, allowing data and applications 
+  to be shared between them. Some public cloud providers are VMware, Microsoft Azure…</li>
+</ul>
+<h3 id="components-of-cloud-infrastructure">Components of cloud infrastructure</h3>
+<p><img alt="cloud1" src="../photos/cloud2.png" /></p>
+<ul>
+<li><strong><em>Client-side Infrastructure:</em></strong> 
+   Here, users interact with the cloud through a front-end GUI
+   (Graphical User Interface). Desktop, laptops, mobiles, tablets, and
+   others are used on the client-side to access services.</li>
+<li><strong><em>Application:</em></strong>
+   The application may be any software or platform that a client wants to access.</li>
+<li><strong><em>The operating system:</em></strong> 
+   The cloud operating system manages the operation, the virtual servers, 
+   execution and processes of virtual machines and virtual infrastructure, as well 
+   as the back-end hardware and software resources. </li>
+<li><strong><em>Service:</em></strong>
+   Cloud Services are offered in different models. These services are being provided 
+   based on the client’s request.</li>
+</ul>
+<p>Some of the service models are seen below</p>
+<h3 id="service-models">Service Models</h3>
+<p>Cloud-Computing providers offer their “services” according to different models, of 
+which the three standard models per NIST are Infrastructure as a Service (IaaS), 
+Platform as a Service (PaaS), and Software as a Service (SaaS).</p>
+<p><img alt="cloud1" src="../photos/cloud3.png" /></p>
+<ul>
+<li><strong><em>IAAS:</em></strong> 
+   Infrastructure As A Service (IAAS) is means of delivering computing infrastructure
+   as on-demand services. It is one of the three fundamental cloud service model 
+   servers’ storage network operating systems. In the user purchasing servers, 
+   software data center space, or network equipment and renting those resources 
+   as a fully outsourced service can demand model. It allows dynamic scaling, and 
+   the resources are distributed as a service. It generally includes multiple users 
+   on a single piece of hardware.</li>
+<li><strong><em>PAAS:</em></strong>
+   Platform as A Service (PAAS) is a cloud delivery model for applications composed 
+   of services managed by a third party. It provides elastic scaling of your application 
+   which allows developers to build applications and services over the internet and the 
+   deployment models include public, private and hybrid.</li>
+<li><strong><em>SAAS:</em></strong> 
+   Software As A Service (SAAS) allows users to run existing online applications and 
+   it is a model software that is deployed as a hosting service and is accessed over 
+   Output Rephrased/Re-written Text the internet or software delivery model during 
+   which software and its associated data are hosted centrally and accessed using their 
+   client, usually an online browser over the web. SAAS services are used for the 
+   development and deployment of modern applications.</li>
+</ul>
+<p>The emergence of Cloud computing has given rise to more as-a-service offerings. 
+   Some of them include:</p>
+<pre><code> - AIaaS: AI as a service
+ - DaaS: Desktop as a service
+ - ITaaS: IT as a service
+ - RaaS: Ransomware as a service.
+</code></pre>
+<h3 id="top-benefits-of-cloud-computing">Top benefits of cloud computing</h3>
+<p><img alt="cloud1" src="../photos/cloud4.png" /></p>
+<ul>
+<li>High Speed: the ability to spin up new instances in a matter of seconds.</li>
+<li>Efficiency and Cost Reduction</li>
+<li>Provides efficient Data Security</li>
+<li>Scalable: ease with quickly — scale up/down infrastructures.</li>
+<li>Collaboration: Cloud environments enable better collaboration across teams.</li>
+<li>Provides unlimited Storage Capacity.</li>
+<li>Provides ease in Back-up and Restoring of Data</li>
+<li>Reliability: Cloud computing makes data backup, disaster recovery, and 
+    business continuity easier and less expensive because data can be mirrored 
+    at multiple redundant sites on the cloud provider’s network.</li>
+</ul>
+<h2 id="focus-aws-cloud">FOCUS: AWS CLOUD</h2>
+<p><strong><em>What Is Amazon Web Services(AWS):</em></strong> 
+   Amazon Web Services(AWS) is Amazon’s cloud computing platform that 
+   offers a mix of packaged platform as a service (PaaS), software as 
+   a service (SaaS), and infrastructure as a service (IaaS).  </p>
+<p>### EC2
+   Amazon EC2 is AWS primary web service that provides resizable compute 
+   capacity in the cloud. </p>
+<p><strong><em>Instance types:</em></strong>
+    Amazon EC2 provides a wide selection of instance types optimized to fit 
+    different use cases. Instance types comprise varying combinations of CPU, 
+    memory, storage, and networking capacity and give you the flexibility to 
+    choose the appropriate mix of resources for your applications. Each 
+    instance type includes one or more instance sizes, allowing you to scale 
+    your resources to the requirements of your target workload.</p>
+<p><strong><em>Example instance Family:</em></strong></p>
+<ul>
+<li>c4 Compute optimized—For workloads requiring significant processing</li>
+<li>r3 Memory optimized—For memory-intensive workloads</li>
+<li>i2 Storage optimized—For workloads requiring high amounts of fast SSD storage</li>
+<li>
+<p>g2 GPU-based instances—Intended for graphics and general-purpose GPU compute workloads</p>
+<p><strong><em>Amazon Machine Images (AMIs):</em></strong>
+   Defines the initial software that will be on an instance when it is launched. 
+   An AMI defines; The Operating System (OS) and its configuration, The initial 
+   state of any patches, Application or system software. 
+   AMI’s can be AWS published, from the AWS Marketplace, Generated 
+   from Existing Instances, or Uploaded Virtual Servers</p>
+<p><strong><em>Security Groups:</em></strong>
+   This is a VPC concept. If an instance is running in an Amazon VPC, 
+   you can change which security groups are associated with an instance 
+   while the instance is running.</p>
+<p><strong><em>EBS:</em></strong> Is type of “block storage” volume offering by AWS. 
+EBS provides persistent block-level storage volumes for use with 
+Amazon EC2 instances. </p>
+<p><strong><em>Instance Stores:</em></strong> Is another type of “block storage” volume offering 
+by AWS for your instance. This storage is located on disks that are 
+physically attached to the host computer.</p>
+</li>
+</ul>
+<p>### S3
+   Amazon Simple Storage Service is a secure, durable, and highly-scalable 
+   cloud storage. Some use cases for cloud storage include: </p>
+<pre><code> - Backup and archive for on-premises or cloud data.
+ - Content, media, and software storage and distribution.
+ - Big data analytics.
+ - Static website hosting.
+ - Cloud-native mobile and Internet application hosting.
+</code></pre>
+<p>### VPC
+   The Amazon Virtual Private Cloud (Amazon VPC) is a custom-defined 
+   virtual network within the AWS Cloud.</p>
+<pre><code>![cloud1](photos/cloud5.png)
+</code></pre>
+<p><strong><em>VPC COMPONENTS:</em></strong>
+   An Amazon VPC consists of the following main components: Subnets, 
+   Route tables, Dynamic Host Configuration Protocol (DHCP) option sets 
+   Security groups, Network Access Control Lists (ACLs).
+   Also, optional components: Internet Gateways (IGWs), Elastic IP (EIP) 
+   addresses, Elastic Network Interfaces (ENIs), Endpoints, Peering, 
+   Network Address Translation (NATs) instances and NAT gateways, Virtual 
+   Private Gateway (VPG), Customer Gateways (CGWs), 
+   and Virtual Private Networks (VPNs)</p>
+<pre><code>***Subnets:***
+</code></pre>
+<p>A subnet is a segment of an Amazon VPC’s IP address range. 
+   Subnets reside within one Availability Zone and cannot span zones; 
+   You can, however, have multiple subnets in one Availability Zone. 
+   Each subnet must be associated with a route table, which controls 
+   the routing for the subnet.</p>
+<pre><code>***Route Tables:***
+</code></pre>
+<p>A route table is a logical construct within an 
+   Amazon VPC that contains a set of rules (called routes) that are 
+   applied to the subnet and used to determine where network traffic is 
+   directed.</p>
+<pre><code>***Internet Gateways:***
+</code></pre>
+<p>IGW allows communication between instances in your Amazon VPC 
+   and the Internet. </p>
+<pre><code>***Dynamic Host Configuration***
+</code></pre>
+<p>Protocol (DHCP) Option Sets: provides a standard for passing 
+   configuration information to hosts on a TCP/IP network. AWS 
+   automatically creates and associates a DHCP option set for your 
+   Amazon VPC upon creation and sets two options: domain-name-servers 
+   (defaulted to AmazonProvidedDNS) and domain-name 
+   (defaulted to the domain name for your region).</p>
+<p>### IAM
+   With AWS IAM Identity Center (successor to AWS Single Sign-On), 
+   you can manage sign-in security for your workforce identities, also 
+   known as workforce users. IAM Identity Center provides one place where 
+   you can create or connect workforce users and centrally manage their 
+   access across all their AWS accounts and applications. </p>
+<p>For more on IAM chack the link: <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html">IAM</a></p>
+<p>### AWS ELASTIC LOAD BALANCER (ELB)
+   AWS has an Elastic Load Balancer that is used to distribute 
+   incoming traffic across multiple targets, such as EC2 instances, 
+   containers, and IP addresses, in one or more Availability Zones. 
+   It monitors the health of its registered targets, and routes traffic 
+   only to the healthy targets. Elastic Load Balancing supports routing 
+   and load balancing of Hypertext.
+   Transfer Protocol (HTTP), Hypertext Transfer Protocol Secure (HTTPS), 
+   Transmission Control Protocol (TCP), and Secure Sockets Layer (SSL) 
+   traffic to Amazon EC2 instances. </p>
+<p><strong><em>Types of AWS ELB:</em></strong>
+    <img alt="cloud1" src="../photos/cloud7.png" /></p>
+<pre><code>The two major Elastic load balancers are:
+
+***Application Load Balancer*** 
+ Application layer that describes the use of HTTP and HTTPS connections 
+ from clients to the load balancer and from the load balancer to your 
+ back-end instance.
+
+ ***Network Load Balancer***
+ Are used to route traffic through layer 4, based IPs and TCP or UDP ports.
+</code></pre>
+<p>### EKS
+   Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service 
+   that you can use to run Kubernetes on AWS without needing to install, 
+   operate, and maintain your own Kubernetes control plane or nodes. 
+   Kubernetes is an open-source system for automating the deployment, 
+   scaling, and management of containerized applications.
+   For more on EKS chack the link: [EKS]https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../CICD/cicd/" class="btn btn-neutral float-left" title="CICD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../gcp/" class="btn btn-neutral float-right" title="GCP">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../CICD/cicd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../gcp/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

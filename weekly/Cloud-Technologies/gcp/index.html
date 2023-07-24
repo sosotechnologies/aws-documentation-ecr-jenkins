@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Cloud-Technologies/gcp/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>GCP - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GCP";
+        var mkdocs_page_input_path = "weekly\\Cloud-Technologies\\gcp.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Cloud-Technologies/gcp/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Cloud Technologies</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">GCP</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+          <li>Cloud Technologies &raquo;</li>
+      <li>GCP</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Cloud-Technologies/gcp.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <pre><code>choco install gcloud-sdk
+</code></pre>
+<p>Secondly: Configure gcp against the CMD terminal</p>
+<pre><code>gcloud init
+</code></pre>
+<p>Using gcloud config </p>
+<pre><code>gcloud config set project PROJECT_ID
+gcloud config set compute/zone COMPUTE_ZONE
+gcloud config set compute/region us-east4   //set the COMPUTE_REGION
+gcloud components update   (optional)
+gcloud auth login
+</code></pre>
+<p>Using gcloud init and SDK authenticatet   <br />
+$ gcloud init      //then follow the steps
+gcloud init ( optional)--console-only
+$ gcloud auth login</p>
+<p>To view your projects and switch to a new project in cli
+$ gcloud auth list                        //this will give you the list of accounts you are configured to
+$ gcloud projects list                //will get the list of projects</p>
+<h1 id="supposedly-your-output-list-after-running-gcloud-projects-list-is">Supposedly your output list after running “gcloud projects list” is:</h1>
+<p>PROJECT_ID                                                  NAME                                           PROJECT_NUMBER
+touchdown-baby-1010                  terraform-project                                123456789
+common-fly-collins1112                ansible-project1                                  323453456</p>
+<h1 id="if-you-want-to-work-on-the-touchdown-baby-1010-run-command-gcloud-config-set-project-project_id">If you want to work on the ‘touchdown-baby-1010’, run command gcloud config set project [project_ID]</h1>
+<p>$ gcloud config set project my-ssn-numberis-1010 </p>
+<p>Next</p>
+<h1 id="to-work-on-k8s-in-windows">to work on k8s in windows</h1>
+<h1 id="install-kubectl-in-windows">Install kubectl in windows</h1>
+<p>$ choco install kubernetes-cli
+$ choco install kubens
+$ choco install kubectx</p>
+<pre><code>       OR
+</code></pre>
+<p>$ gcloud components install kubectl</p>
+<p>NEXT
+ create a Kubernetes cluster. Move to visual code, it’s ideal  (code .)</p>
+<h1 id="configure-kubernetes-configuration-file">Configure kubernetes configuration file</h1>
+<h1 id="if-creating-a-cluster-names-my-cluster">If creating a cluster names my-cluster</h1>
+<p>#If cluster already exist, copy the cluster code and paste here</p>
+<h1 id="create-a-zonal-kubernetes-cluster-called-tesla-cluster-in-zone-us-west2-a">create a zonal Kubernetes cluster called tesla-cluster in zone us-west2-a</h1>
+<p>$ gcloud container clusters create tesla-cluster --zone us-west2-a</p>
+<h1 id="create-a-zonal-standard-kubernetes-cluster-called-tesla-cluster1-in-zone-us-central1-b-and-specify-the-number-of-nodes-will-create-3-vm-instances-and-a-cluster">create a zonal standard Kubernetes cluster called tesla-cluster1 in zone us-central1-b and specify the number of nodes. Will create 3 vm instances and a cluster</h1>
+<p>$ gcloud container clusters create tesla-cluster1 --machine-type n1-standard-2 --num-nodes 2 --zone=us-central1-b --cluster-version latest  </p>
+<h1 id="create-an-autopilot-public-cluster-called-tesla-cluster-switch-to-code-and-run-in-bash">create an autopilot public cluster called tesla-cluster – switch to code . and  run in bash</h1>
+<p>$ gcloud container clusters create-auto tesla-cluster1 -–region=us-central1 --project= us-gcp-320723 
+$ gcloud container clusters create-auto tesla-cluster --region=us-central1 --project=advance-engine-323116  </p>
+<h1 id="get-the-autopilot-cluster-credentials">Get the autopilot cluster credentials</h1>
+<p>$ gcloud container clusters get-credentials tesla-cluster --region us-central1 --project advance-engine-323116 -</p>
+<h1 id="get-the-nodes-running-in-the-cluster">get the nodes running in the cluster</h1>
+<p>$ kubectl get nodes</p>
+<h1 id="get-the-service-account-this-will-be-useful-ror-role-cluster-and-rbac-binding">get the service account, this will be useful ror role, cluster and RBAC binding</h1>
+<h1 id="gcloud-iam-service-accounts-describe-service_account">gcloud iam service-accounts describe [service_account]</h1>
+<p>$ gcloud iam service-accounts describe 478501398223compute@developer.gserviceaccount.com</p>
+<p>Very important concept. This will be required when deploying ingress.
+Granting Cloud Build access to GKE
+To deploy the application in your Kubernetes cluster, Cloud Build needs the Kubernetes Engine Developer Identity and Access Management Role.
+Get Project Number: (top left in console, click the 3-bars  click home) PROJECT_NUMBER="$(gcloud projects describe ${PROJECT_ID} --format='get(projectNumber)')"
+478501398223="$(gcloud projects describe $advance-engine-323116 --format='get(projectNumber)')"</p>
+<p>Add IAM Policy bindings:
+# gcloud projects add-iam-policy-binding ${PROJECT_NUMBER} \
+    --member=serviceAccount:${PROJECT_NUMBER}@cloudbuild.gserviceaccount.com \
+    --role=roles/container.developer</p>
+<p>$ gcloud projects add-iam-policy-binding $478501398223 --member=serviceAccount:$ 478501398223@cloudbuild.gserviceaccount.com  --role=roles/container.developer</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../intro-aws/" class="btn btn-neutral float-left" title="AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../GitHub/github/" class="btn btn-neutral float-right" title="GitHub">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../intro-aws/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../GitHub/github/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Flask/flask/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Flask - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Flask";
+        var mkdocs_page_input_path = "weekly\\Flask\\flask.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Flask/flask/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Flask</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-anaconda">Install Anaconda</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#html">HTML</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sample-html-template">Sample html template</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#list">List</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dif-and-spans">Dif and spans</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#form-and-label">Form and label</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#css">CSS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#designing-the-heading-in-a-separate-css-file">Designing the Heading in a separate css file</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-an-element-to-css-and-html-files">Add an  element to css and html files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-hex-color">Add hex color</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bootstrap">BootStrap</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#flask">FLASK</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-virtual-environments">Create Virtual Environments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#flask-application-for-a-single-page">Flask application for a single page</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flask-application-routing-of-page">Flask application routing of page</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dynamic-variable-add-debug">Dynamic variable - add debug</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flask-templates">Flask Templates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#soso-templates">Soso-Templates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#soso-forms">soso-Forms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#02-flask-form-example">02 Flask Form Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#databases-sqlite">Databases - SQLite</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sqlite">SQLite</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>Flask</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Flask/flask.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="flask-lecture">Flask Lecture</h1>
+<p>App that does the following:
+- Accept user info
+- Retrieve info from a MySQL Database
+- Create, Read, Update, Delete (CRUD) Info from the MySQL Database
+- Return Info to user as requested</p>
+<p><strong><em>Architecture</em></strong>
+- FrontEnd: HTML/CSS, Bootstrap, JS, JQuery...
+- Flask Web Application
+- SQL Database (Database SQLite)
+- WTForms
+- Jinja Templates</p>
+<h2 id="install-anaconda">Install Anaconda</h2>
+<p>Installation Link: <a href="https://www.anaconda.com/download">Install for Windows</a>
+Be sure to Add to path in step 8: <a href="https://docs.anaconda.com/free/anaconda/install/windows/">Installation doc for windows</a></p>
+<p><strong><em>Create virtual environment</em></strong></p>
+<pre><code>conda create -n sosoflaskenv python=3.6
+[To delete] --&gt; His was conda create -n mynewflaskenv python=3.6
+
+activate sosoflaskenv
+pip install requirements.txt
+</code></pre>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="html">HTML</h3>
+<h4 id="sample-html-template">Sample html template</h4>
+<p>test.html</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Soso Technologies HTML Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+    &lt;p&gt;This is a simple HTML template.&lt;/p&gt;
+    &lt;p&gt;You can add your content here.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h4 id="list">List</h4>
+<ul>
+<li>Adding the 3 different types of list in html
+test.html</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Soso Technologies HTML Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+    &lt;p&gt;This is a simple HTML template.&lt;/p&gt;
+    &lt;p&gt;You can add your content here.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Kubernetes&lt;/li&gt;
+      &lt;li&gt;Docker&lt;/li&gt;
+      &lt;li&gt;Terraform&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;Kubernetes&lt;/li&gt;
+      &lt;li&gt;Docker&lt;/li&gt;
+      &lt;li&gt;Terraform&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;dl&gt;
+      &lt;dt&gt;Python&lt;/dt&gt;
+      &lt;dd&gt;- Study python&lt;/dd&gt;
+      &lt;dt&gt;AI&lt;/dt&gt;
+      &lt;dd&gt;- Study AI&lt;/dd&gt;
+    &lt;/dl&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h4 id="dif-and-spans">Dif and spans</h4>
+<ul>
+<li>A <div> section in a document that is styled with CSS</li>
+<li>For dif, The belowdiv will call a css and apply styling within the div tags</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.sosoDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+
+&lt;div class=&quot;sosoDiv&quot;&gt;
+  &lt;p&gt;This is a simple HTML template.&lt;/p&gt;
+  &lt;p&gt;You can add your content here.&lt;/p&gt;
+  &lt;p&gt;This is some text in a div element.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is some text outside the div element.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong><em>Span</em></strong></p>
+<ul>
+<li>A <span> element which is used to color a part of a text:</li>
+<li>For <strong><em>spam</em></strong>, The below spam element which is used to color a part of a text</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.sosoDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+
+&lt;div class=&quot;sosoDiv&quot;&gt;
+  &lt;p&gt;This is a simple HTML template.&lt;/p&gt;
+  &lt;p&gt;You can add your content here.&lt;/p&gt;
+  &lt;p&gt;This is some text in a div element.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sosotech logo is &lt;span style=&quot;color:rgb(5, 232, 39);font-weight:bold&quot;&gt;green&lt;/span&gt; for nature.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li>HTML attributes provide additional information about HTML elements.</li>
+<li>Just adding a link as an attribute</li>
+<li>also added an image inside folder called photos and pic is named: sosotechlogo.jpg</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.sosoDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+
+
+&lt;div class=&quot;sosoDiv&quot;&gt;
+  &lt;p&gt;This is a simple HTML template.&lt;/p&gt;
+  &lt;p&gt;You can add your content here.&lt;/p&gt;
+  &lt;p&gt;This is some text in a div element.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;a href=&quot;https://www.sosotechnologies.com&quot;&gt;Visit sosotech&lt;/a&gt;
+
+&lt;img src=&quot;images/sosotechlogo.jpg&quot; title=&quot;Official Logo&quot; alt=&quot;We Know Technology!&quot;/&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="form-and-label">Form and label</h4>
+<ul>
+<li>We have the <strong><em>GET</em></strong> and <strong><em>POST</em></strong> values for label</li>
+<li>adding a basic form with each label corresponding to the input</li>
+<li>also added a break element as seen <br></li>
+<li>the action will point to a specific file, that we have the form details</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.sosoDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+    &lt;br&gt; 
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;sosoDiv&quot;&gt;
+    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&quot;message&quot;&gt;Message:&lt;/label&gt;&lt;br&gt;
+    &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;5&quot; cols=&quot;30&quot; required&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;a href=&quot;https://www.sosotechnologies.com&quot;&gt;Visit sosotech&lt;/a&gt;
+
+&lt;img src=&quot;images/sosotechlogo.jpg&quot; title=&quot;Official Logo&quot; alt=&quot;We Know Technology!&quot;/&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong><em>Another basig Form</em></strong>
+- I added a placeholder for password and email in the boxes
+- Also add an action in the form
+- Also add a radio, for yes or no Option</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.sosoDiv {
+  background-color: lightblue;    
+  text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome to Soso Technologies HTML Page&lt;/h1&gt;
+    &lt;br&gt; 
+&lt;form action=&quot;#&quot; method=&quot;get&quot; class=&quot;sosoDiv&quot;&gt;
+
+    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;sosousersemail&quot; placeholder=&quot;enter your email&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; name=&quot;sosouserspassword&quot; placeholder=&quot;password&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&quot;option&quot;&gt;Do you like SoSoTechnologies?&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;yes&quot; name=&quot;option&quot; value=&quot;yes&quot;&gt;
+    &lt;label for=&quot;yes&quot;&gt;Yes&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;no&quot; name=&quot;option&quot; value=&quot;no&quot;&gt;
+    &lt;label for=&quot;no&quot;&gt;No&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;input type=&quot;Submit&quot; name=&quot;&quot; value=&quot;Submit&quot;&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;/form&gt;
+
+&lt;a href=&quot;https://www.sosotechnologies.com&quot;&gt;Visit sosotech&lt;/a&gt;
+
+&lt;img src=&quot;images/sosotechlogo.jpg&quot; title=&quot;Official Logo&quot; alt=&quot;We Know Technology!&quot;/&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="css">CSS</h3>
+<ul>
+<li>Create a <strong><em>.css</em></strong> file </li>
+<li>Connect CSS to HTML</li>
+</ul>
+<h4 id="designing-the-heading-in-a-separate-css-file">Designing the Heading in a separate css file</h4>
+<ul>
+<li>Create a <strong><em>.css</em></strong> file called css-link.css</li>
+<li>create a new HTML file called html-link.html</li>
+<li>Connect CSS to HTML</li>
+</ul>
+<p>This is the <strong><em>css-link.css</em></strong> file that will be used for the below html file.</p>
+<pre><code class="language-css">h1 {
+  color: red;
+}
+</code></pre>
+<p>This is the <strong><em>html-link.html</em></strong> file that will be used connect with the above .css file.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Link&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css-link.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to SosoTechnologies&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="add-an-element-to-css-and-html-files">Add an <li> element to css and html files</h4>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Link&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css-link.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to SosoTechnologies&lt;/h1&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Python&lt;/li&gt;
+        &lt;li&gt;Kubernetes&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">h1 {
+  color: red;
+}
+
+li {
+  color: blue;
+}
+</code></pre>
+<h4 id="add-hex-color">Add hex color</h4>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Link&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css-link.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to SosoTechnologies&lt;/h1&gt;
+
+    &lt;h3&gt;This is Soso hex color&lt;/h3&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Python&lt;/li&gt;
+        &lt;li&gt;Kubernetes&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Add my soso paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">h1 {
+  color: red;
+}
+
+li {
+  color: blue;
+}
+
+p {
+  color:rgb(43, 90, 20);
+}
+
+/* These are [hex color], you can google this */
+h3 {
+  color: #0e5922;
+}
+</code></pre>
+<p><strong><em>Adding SPAN to a paragraph and updating the CSS file to reflect div</em></strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Link&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css-link.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to SosoTechnologies&lt;/h1&gt;
+
+    &lt;h3&gt;This is Soso hex color&lt;/h3&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Python&lt;/li&gt;
+        &lt;li&gt;Kubernetes&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;My soso paragraph is outside the div.&lt;/p&gt;
+    &lt;div&gt;
+        &lt;p&gt;My New soso paragraph is inside the div.&lt;/p&gt;
+        &lt;p&gt;Add a span inside the div...&lt;span&gt;THIS IS A SPAN&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">div{
+    border: 5px outset red;
+    background-color: lightblue;    
+    text-align: center;
+    border-width: 10px;
+    border-style: solid;
+}
+</code></pre>
+<p><strong><em>Adding multiple SPAN paragraph and updating the CSS file to reflect different div</em></strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Link&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css-link.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to SosoTechnologies&lt;/h1&gt;
+
+    &lt;h3&gt;This is Soso hex color&lt;/h3&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Python&lt;/li&gt;
+        &lt;li&gt;Kubernetes&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;My soso paragraph is outside the div.&lt;/p&gt;
+    &lt;div class=&quot;firstsosoDiv&quot;&gt;
+        &lt;p&gt;My New soso paragraph is inside the div.&lt;/p&gt;
+        &lt;p&gt;Add a span inside the div...&lt;span&gt;THIS IS A FIRST SPAN&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;secondsosoDiv&quot;&gt;
+        &lt;p&gt;My New soso paragraph is inside the div.&lt;/p&gt;
+        &lt;p&gt;Add a span inside the div...&lt;span&gt;THIS IS A SECOND SPAN&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-css">.firstsosoDiv{
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.secondsosoDiv{
+  border: 5px outset rgb(0, 30, 255);
+  background-color: rgb(219, 211, 191);    
+  text-align: center;
+  border-width: 10px;
+  border-style: solid;
+}
+</code></pre>
+<h3 id="bootstrap">BootStrap</h3>
+<p>Checkout this website: <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">For BootStrap examples</a>
+Checkout this navBars: [For BootStrap navBar examples](https://getbootstrap.com/docs/5.3/components/navbar/</p>
+<h2 id="flask">FLASK</h2>
+<h3 id="create-virtual-environments">Create Virtual Environments</h3>
+<p>Virtual environments are isolated environments that allow you to manage and isolate dependencies, packages, and Python versions for different projects. Navigate to the directory where you want to create your virtual environment.
+Run the command: </p>
+<p>with conda, install an env called myflaskenv, alongside flask</p>
+<pre><code>conda create -n myflaskenv flask
+activate myflaskenv 
+[OR]
+source activate myflaskenv   (for Linux machines)
+</code></pre>
+<ul>
+<li>To deactivate environment</li>
+</ul>
+<pre><code>deactivate
+[OR]
+source deactivate (for Linux machines)
+</code></pre>
+<h4 id="flask-application-for-a-single-page">Flask application for a single page</h4>
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, SosoWorld!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<h4 id="flask-application-routing-of-page">Flask application routing of page</h4>
+<ul>
+<li>add an app route called register to url</li>
+<li>so I can now open as http://127.0.0.1:5000/register</li>
+</ul>
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+@app.route('/register')
+def register():
+    return '&lt;h1&gt;Registration page&lt;/&gt;'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<h4 id="dynamic-variable-add-debug">Dynamic variable - add debug</h4>
+<ul>
+<li>definine the course and apply a variable name, which can be defined to any course of your choice.
+EXample:</li>
+<li>http://127.0.0.1:5000/course/kubernetes</li>
+<li>http://127.0.0.1:5000/course/docker</li>
+</ul>
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+@app.route('/register')
+def register():
+    return '&lt;h1&gt;Registration page&lt;/&gt;'
+
+#This section is a dynamic defination
+@app.route('/course/&lt;name&gt;')
+def course(name):
+    return '&lt;h1&gt;Select your course of study from this page: {}&lt;h1&gt;'.format(name)
+#dynamic defination section ends
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<h3 id="flask-templates">Flask Templates</h3>
+<p>In Flask, a template is an HTML file that contains placeholders for dynamic content. Templates allow you to separate the presentation logic (HTML markup) from the application logic (Python code). This follows the principle of separation of concerns.</p>
+<p>Flask uses a templating engine called Jinja2, which provides a powerful and flexible way to generate dynamic HTML content. With templates, you can easily insert variables, perform conditional logic, iterate over lists, and more.</p>
+<p>To use templates in Flask, you need to create a templates directory in your project and place your HTML template files inside it. Here's an example of a simple Flask template</p>
+<h4 id="soso-templates">Soso-Templates</h4>
+<ul>
+<li>Create a register.html file in the template folder</li>
+<li>Update the app.py file to add a render template</li>
+<li>Create a static file inside this folder</li>
+</ul>
+<p>Here is the folder tree
+.
+|-- Soso-Templates
+|   |-- 01-app.py
+|   |-- static
+|   |   <code>-- sosotech.jpg
+|</code>-- templates
+|       |-- 01-Template.html</p>
+<h5 id="01-templete">01-Templete</h5>
+<p>Create 
+- name the htmp file: <strong><em>01-Template.html</em></strong>
+- name the py file: <strong><em>01-app.py</em></strong></p>
+<pre><code class="language-html">&lt;&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Basic&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello SosoNation!&lt;/h1&gt;
+    &lt;h3&gt;Here is our sample CICD Architecture Diagram!&lt;/h3&gt;
+    &lt;img src=&quot;../static/sosotech.jpg&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-py">from flask import Flask, render_template
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    # Connecting to a template (html file)
+    return render_template('01-Template.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<h5 id="02-connecting-flask-to-templete-variables">02-Connecting flask to Templete - Variables</h5>
+<p>Create 
+- name the htmp file: <strong><em>02-Template.html</em></strong>
+- name the py file: <strong><em>02-app.py</em></strong>
+- Modify boty files from 01-Template, also adding indexing of the name
+- Check out the localhost links:
+  - http://127.0.0.1:5000
+  - http://127.0.0.1:5000/sosocourse/kubernetes</p>
+<pre><code class="language-py">from flask import Flask, render_template
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+
+    return '&lt;h1&gt; Chcekout our list of /course/name &lt;/h1&gt;'
+
+@app.route('/course/&lt;name&gt;')
+def course_name(name):
+
+    return render_template('02-Template.html',name=name)
+
+@app.route('/sosocourse/&lt;name&gt;')
+def soso_course_name(name):
+    letters = list(name)
+    course_list = {'course_name':name}
+    return render_template('02-Template.html',
+                           name=name,sosocourselist=letters,ourcollection=course_list)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Basic&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Basic variable insert: {{name}}!&lt;/h1&gt;
+    &lt;h1&gt;List example: {{mylist}}&lt;/h1&gt;
+    &lt;h1&gt;Indexing the list for the first letter: {{sosocourselist[0]}}&lt;/h1&gt;
+    &lt;h1&gt;course name from dictionary: {{ourcollection['course_name']}}&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="03-templete-adding-links-to-the-html-file">03-Templete - adding links to the html file</h5>
+<ul>
+<li>name the htmp file: <strong><em>03-Template.html</em></strong></li>
+<li>name the py file: <strong><em>03-app.py</em></strong></li>
+<li>Add a link to the photo in static</li>
+<li>Open in url: http://127.0.0.1:5000/static/sosotech.jpg</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Basic&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Basic variable insert: {{ name }}!&lt;/h1&gt;
+    &lt;h1&gt;List example: {{ mylist }}&lt;/h1&gt;
+    &lt;h1&gt;Indexing the list for the first letter: {{ sosocourselist[0] }}&lt;/h1&gt;
+    &lt;h1&gt;Course name from dictionary: {{ ourcollection['course_name'] }}&lt;/h1&gt;
+    &lt;img src=&quot;{{ url_for('static', filename='sosotech.jpg') }}&quot; alt=&quot;SosoTech Image&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-py">from flask import Flask, render_template
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+
+    return '&lt;h1&gt; Chcekout our list of /course/name &lt;/h1&gt;'
+
+@app.route('/course/&lt;name&gt;')
+def course_name(name):
+
+    return render_template('02-Template.html',name=name)
+
+@app.route('/sosocourse/&lt;name&gt;')
+def soso_course_name(name):
+    letters = list(name)
+    course_list = {'course_name':name}
+    return render_template('02-Template.html',
+                           name=name,sosocourselist=letters,ourcollection=course_list)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<h5 id="04-forms-connect-html-forms-to-flask-application">04-Forms - Connect HTML forms to flask application</h5>
+<p>Create the following files:
+- name the py file: <strong><em>04-app.py</em></strong>
+- name the htmp file: <strong><em>04-1-Template-welcome.html</em></strong>
+- name the htmp file: <strong><em>04-2-Template-thanks.html</em></strong>
+- name the htmp file: <strong><em>04-3-Template-index.html</em></strong>
+- name the htmp file: <strong><em>04-4-Template-404.html</em></strong>
+- name the htmp file: <strong><em>04-5-Template-basic.html</em></strong>
+- Check sites:
+  - http://127.0.0.1:5000/sososignup_form
+  - http://127.0.0.1:5000/ftetsjjsj  --&gt; to test 404 error message</p>
+<p><strong><em>04-app.py</em></strong></p>
+<pre><code class="language-py">from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('04-3-Template-index.html')
+
+@app.route('/sososignup_form')
+def sososignup_form():
+    return render_template('04-1-Template-welcome.html')
+
+@app.route('/thanks')
+def thanks():
+    first = request.args.get('first')
+    last = request.args.get('last')
+    return render_template('04-2-Template-thanks.html',first=first,last=last)
+
+@app.errorhandler(404)
+def page_is_broken(e):
+    return render_template('04-4-Template-404.html'), 404
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<p><strong><em>04-1-Template-welcome.html</em></strong></p>
+<pre><code class="language-html">{% extends &quot;04-5-Template-basic.html&quot;%}
+{% block content %}
+&lt;div class=&quot;jumbotron&quot;&gt;
+
+
+&lt;h1&gt;Welcome to the sign up Form!&lt;/h1&gt;
+&lt;h3&gt;Register for the course of choice!&lt;/h3&gt;
+&lt;p&gt;Please fill out the form below to register.&lt;/p&gt;
+    &lt;form action=&quot;{{url_for('thanks')}}&quot;&gt;
+       &lt;label for=&quot;first&quot;&gt;First Name&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;first&quot; required&gt;&lt;br&gt;
+        &lt;label for=&quot;last&quot;&gt;Last Name&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;last&quot; required&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Submit Form&quot;&gt;
+    &lt;/form&gt;
+
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+<p><strong><em>04-2-Template-thanks.html</em></strong></p>
+<pre><code class="language-html">{% extends &quot;04-5-Template-basic.html&quot;%}
+{% block content %}
+&lt;div class=&quot;jumbotron&quot;&gt;
+
+  &lt;h1&gt;Thank you for signing up for our course {{first}} {{last}}!&lt;/h1&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+<p><strong><em>04-3-Template-index.html</em></strong></p>
+<pre><code class="language-html">{% extends &quot;04-5-Template-basic.html&quot;%}
+{% block content %}
+&lt;div class=&quot;jumbotron&quot;&gt;
+&lt;p&gt;Welcome to Sosotechnologies!&lt;/p&gt;
+&lt;p&gt;Wanna sign up for our Courses&lt;/p&gt;
+&lt;a href=&quot;{{url_for('sososignup_form')}}&quot;&gt;Sign up for our courses here&lt;/a&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+<p><strong><em>04-4-Template-404.html</em></strong></p>
+<pre><code class="language-html">{% extends &quot;04-5-Template-basic.html&quot;%}
+{% block content %}
+&lt;div class=&quot;jumbotron&quot;&gt;
+&lt;p&gt;Sorry, this SoSo Page is not soso at this time.&lt;/p&gt;
+&lt;p&gt;Please check-back later!&lt;/p&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+<p><strong><em>04-5-Template-basic.html</em></strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;SoSoTech&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css&quot; integrity=&quot;sha384-pzjw8Gi+dFwwSAw9+0Bt9o/xkJXhsv/N9nEV+IBkTJkzE4vDlSLF/xjiVSWX8ZW9&quot; crossorigin=&quot;anonymous&quot;&gt;
+    &lt;img src=&quot;{{ url_for('static', filename='sosotech.jpg') }}&quot; alt=&quot;SosoTech Image&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav class=&quot;navbar navbar-expand-lg navbar-light bg-light&quot;&gt;
+      &lt;a class=&quot;navbar-brand&quot; href=&quot;{{url_for('index')}}&quot;&gt;SosoTech Home Page&lt;/a&gt;
+    &lt;/nav&gt;
+    {% block content %}
+    {% endblock %}
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="soso-forms">soso-Forms</h3>
+<h4 id="02-flask-form-example">02 Flask Form Example</h4>
+<p>Create the following files
+- templates
+  - 02-form-thanks.html
+  - 02-form.html
+- 02-Form.py</p>
+<p><strong><em>02-form-thanks.html</em></strong></p>
+<pre><code class="language-html">&lt;h1&gt;Thank you for your submission!&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Study Courses: {{ session['studycourses'] }}&lt;/li&gt;
+  &lt;li&gt;DevOps Experience: {{ session['neutered'] }}&lt;/li&gt;
+  &lt;li&gt;Course Feedback: {{ session['thought'] }}&lt;/li&gt;
+  &lt;li&gt;Favorite Course: {{ session['course'] }}&lt;/li&gt;
+  &lt;li&gt;Additional Feedback: {{ session['feedback'] }}&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p><strong><em>02-form.html</em></strong></p>
+<pre><code class="language-html">&lt;h1&gt;Welcome to Study Course Surveys&lt;/h1&gt;
+&lt;form method=&quot;POST&quot;&gt;
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.studycourses.label }} {{ form.studycourses }}
+    &lt;br&gt;
+    {{ form.neutered.label }} {{ form.neutered }}
+    &lt;br&gt;
+    {{ form.course.label }} {{ form.course }}
+    &lt;br&gt;
+    {{ form.thought.label }} {{ form.thought }}
+    &lt;br&gt;
+    Any other feedback?
+    &lt;br&gt;
+    {{ form.feedback }}
+    &lt;br&gt;
+    {{ form.submit() }}
+&lt;/form&gt;
+</code></pre>
+<p><strong><em>02-Form.py</em></strong></p>
+<pre><code class="language-py">from flask import Flask, render_template, session, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, BooleanField, RadioField, SelectField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'sososecretkey'
+
+class CourseInfoForm(FlaskForm):
+    studycourses = StringField('What study courses are you interested in?', validators=[DataRequired()])
+    neutered = BooleanField(&quot;Do you have any DevOps Experience?&quot;)
+    thought = RadioField('What do you think of our course List:', choices=[('thought_one', 'SOSO'), ('thought_two', 'Excited')])
+    course = SelectField(u'Pick Your Favorite Course:', choices=[('k8s', 'Kubernetes'), ('dc', 'Docker'), ('Ter', 'Terraform'), ('Cloud', 'AWS')])
+    feedback = TextAreaField()
+    submit = SubmitField('Submit')
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = CourseInfoForm()
+    if form.validate_on_submit():
+        session['studycourses'] = form.studycourses.data
+        session['neutered'] = form.neutered.data
+        session['thought'] = form.thought.data
+        session['course'] = form.course.data
+        session['feedback'] = form.feedback.data
+        return redirect(url_for(&quot;thanks&quot;))
+    return render_template('02-form.html', form=form)
+
+@app.route('/thanks')
+def thanks():
+    return render_template('02-form-thanks.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<h3 id="databases-sqlite">Databases - SQLite</h3>
+<p>In this code, SQLAlchemy is used for database operations. The <strong><em>Survey</em></strong> class is defined as a SQLAlchemy model representing the survey table. The SQLALCHEMY_DATABASE_URI configuration is set to your MySQL database URI.
+Ensure you replace 'your_username', 'your_password', and 'your_database' in the SQLALCHEMY_DATABASE_URI with your actual MySQL database credentials.
+Make sure you have the necessary dependencies installed, including flask_sqlalchemy.</p>
+<pre><code>pip install Flask-SQLAlchemy
+</code></pre>
+<h4 id="sqlite">SQLite</h4>
+<p><strong><em>Common commands</em></strong></p>
+<pre><code>quit()
+pip3 show Flask-WTF
+</code></pre>
+<p>NOTE TO SELF
+- skipped lesson 4 install Atom</p>
+<p>https://www.udemy.com/course/python-and-flask-bootcamp-create-websites-using-flask/learn/lecture/10533502#overview</p>
+<p>I will be teaching the following subjects
+- Devops
+- GitOps
+- CICD
+- Ansible
+- AWS
+- Jenkins
+- Docker
+- Kubernetes
+- Flask</p>
+<p>Write an introductory message to share with my audience</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../ELK/elk/" class="btn btn-neutral float-left" title="ELK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../rancher/rancher/" class="btn btn-neutral float-right" title="Rancher">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../ELK/elk/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../rancher/rancher/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

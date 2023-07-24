@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/ELK/elk/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>ELK - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ELK";
+        var mkdocs_page_input_path = "weekly\\ELK\\elk.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/ELK/elk/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">ELK</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#elasticsearch">ElasticSearch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#elasticsearch-architecture-key-components">Elasticsearch Architecture: Key Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kibana">Kibana</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-data-into-elasticsearch">Adding data into Elasticsearch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-ingest-data-into-elasticsearch-service">How to ingest data into Elasticsearch Service</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-index">The index</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping">Mapping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-elastic-integrations">What is Elastic integrations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elastic-agent">Elastic Agent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-hands-on">Sample Hands-on</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>ELK</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/ELK/elk.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="elk-elastic-stack">ELK - Elastic Stack</h1>
+<p>ELK Stack is the world’s most popular log management platform.
+The ELK stack is an acronym used to describe a stack that comprises 
+of three popular projects: Elasticsearch, Logstash, and Kibana. </p>
+<ul>
+<li>
+<p><strong><em>Elasticsearch</em></strong>
+   is a distributed search and analytics engine built on Apache Lucene</p>
+</li>
+<li>
+<p><strong><em>Logstash</em></strong>
+   is used for both shipping as well as processing and storing logs</p>
+</li>
+<li>
+<p><strong><em>Kibana</em></strong>
+   is a visualization tool which is hosted through Nginx or Apache</p>
+</li>
+</ul>
+<p><strong><em>Some popular Use Cases for ELK are:</em></strong></p>
+<p>Logging, Matrics, Security Analysis, Business Analysis
+ -  Logging - logging and analysing Data, like gaming data
+ -  Matrics - like NASA Rover can sent telematrics, sensor data
+ -  Security Analysis - Helps with securing comunication in Apps like Slack
+ -  Business Analysis - Helps with matching people</p>
+<h2 id="elasticsearch">ElasticSearch</h2>
+<p>With ElasticSearch, User can sends search quary to your website and your 
+server send those requests to ElasticSearch, Elasticsearch then processes 
+this request and Responds back to the user, through the Server.</p>
+<h3 id="elasticsearch-architecture-key-components">Elasticsearch Architecture: Key Components</h3>
+<p><strong><em>Elasticsearch Cluster</em></strong>
+ is composed of a group of nodes that store data.</p>
+<p><strong><em>Elasticsearch Node</em></strong>
+ is an instance that runs in a cluster. Multiple nodes can be run on a 
+ single machine. When Elastic is running, you will have an instance of 
+ elastic known as Node. Each Node Has a unique ID and a node. Each Node 
+ belongs to a single cluster. Data is stored as documents in Elasticsearch.
+ Indices are used to group documents that are related to each other. 
+ When an Index is created, it comes with a Shard, by default. 
+ There are the three main options to configure an Elasticsearch node:</p>
+<ul>
+<li>Elasticsearch master node</li>
+<li>Elasticsearch data node</li>
+<li>Elasticsearch client node</li>
+</ul>
+<p><strong><em>Search movement</em></strong> - client --&gt; servers --&gt; ElasticSearch</p>
+<p><img alt="elastic1" src="../photos/elastic1.png" /></p>
+<p><strong><em>Shards</em></strong>
+  is where data is stored. What you create an Index, you can create multiple 
+  shards that are distributed across nodes. Each shard has its replica to 
+  recover data in case of node failure. The primary shard and replica shard is 
+  always placed on different nodes. Horizontal scaling or scale-out is the main 
+  reason to shard a database. The number of shards depends heavily on the 
+  amount of data we have.</p>
+<p><strong><em>Shard Example use Case 1</em></strong>
+   <img alt="elastic2" src="../photos/elastic3.png" /></p>
+<ul>
+<li>
+<p>A BCBSNC Elastic engineer has 900k documents that they want to store. </p>
+</li>
+<li>
+<p>Each Shard can only Hold a maximum of 300k Documents</p>
+</li>
+<li>
+<p>Two more shards of 300GB each will be added bringing the total storage 
+     capacity to 900K Documents</p>
+</li>
+</ul>
+<p><strong><em>Shard Example use Case 2</em></strong>
+   <img alt="elastic3" src="../photos/elastic4.png" /></p>
+<p><strong><em>Scenario 1:</em></strong></p>
+<ul>
+<li>An Elastic engineer searches 500k documents that is stored in a single Shard </li>
+<li>The response time for searching 500k Documents in a single shard is 10 seconds.</li>
+</ul>
+<p><strong><em>Scenario 2:</em></strong></p>
+<ul>
+<li>
+<p>An Elastic engineer runs a parallel searches of 500k documents that are 
+     distributed in 5 Shard.</p>
+</li>
+<li>
+<p>The response time for searching 100k  Documents/Shard will be 2 seconds.</p>
+</li>
+<li>
+<p>So, the response time for searching all 500k Documents that are distributed 
+     amongst the 5 shard will still be 2 seconds.</p>
+</li>
+</ul>
+<h3 id="kibana">Kibana</h3>
+<p>Kibana is a data visualization and exploration tool used for log and time-series 
+ analytics, application monitoring, and operational intelligence use cases. 
+ It offers powerful and easy-to-use features such as histograms, line graphs, 
+ pie charts, heat maps, and built-in geospatial support.</p>
+<p><img alt="kibana1" src="../photos/kibana1.png" /></p>
+<p><strong><em>Kibana Aggregations</em></strong></p>
+<p>There are two main types of aggregations </p>
+<ol>
+<li>
+<p><strong><em>Metric aggregations</em></strong><br />
+     are used to calculate a value for each bucket based on the 
+     documents inside the bucket.</p>
+</li>
+<li>
+<p><strong><em>Bucket aggregations</em></strong>
+     are used groups documents together in one bucket according to your logic 
+     and requirements, while the Metric aggregations </p>
+</li>
+</ol>
+<p><img alt="kibana1" src="../photos/kibana2.png" /></p>
+<p>For More information on Kibana,: <a href="https://logz.io/blog/kibana-tutorial-2/#kibanaaggregations">Click link</a></p>
+<h3 id="adding-data-into-elasticsearch">Adding data into Elasticsearch</h3>
+<p>The main consideration for indexing or adding data into Elasticsearch largely depends on 
+whether you are indexing general content or timestamped data.</p>
+<p><strong><em>General content:</em></strong>
+Index content like HTML pages, catalogs and other files. Send data directly to Elasticseach 
+from your application using an Elastic language client. Otherwise use Workplace Search 
+content connectors or the Enterprise Search web crawler.</p>
+<p><strong><em>Timestamped data:</em></strong>
+The preferred way to index timestamped data is to use Elastic Agent. Elastic Agent is a single, 
+unified way to add monitoring for logs, metrics, and other types of data to a host.</p>
+<h3 id="how-to-ingest-data-into-elasticsearch-service">How to ingest data into Elasticsearch Service</h3>
+<p>There are 4 main ways in Adding Data to ElasticSearch Service:</p>
+<ul>
+<li>
+<p>By using Beats and Logstash</p>
+</li>
+<li>
+<p>By using Kibana</p>
+</li>
+<li>
+<p>By programmatically indexing data </p>
+</li>
+<li>
+<p>Manually adding data</p>
+</li>
+</ul>
+<p>Read more about data ingestion in ElasticSearch <a href="https://www.elastic.co/blog/how-to-ingest-data-into-elasticsearch-service">Click Link</a></p>
+<h3 id="the-index">The index</h3>
+<p>The index is the basis of Elasticsearch, it is where you store your documents. You can compare it to a table in a database. An index has settings and a mapping which defines how to store and index the documents.</p>
+<h3 id="mapping">Mapping</h3>
+<p>Mapping is the process of defining how a document, and the fields it contains, are stored and indexed.
+Each document is a collection of fields, which each have their own data type. When mapping your data, you 
+create a mapping definition, which contains a list of fields that are pertinent to the document.</p>
+<h3 id="what-is-elastic-integrations">What is Elastic integrations</h3>
+<p>Elastic integrations are a streamlined way to connect your data to the Elastic Stack. 
+Integrations are available for popular services and platforms, like Nginx, AWS, and MongoDB, 
+as well as many generic input types like log files.</p>
+<p>For more on Data Integration <a href="https://docs.elastic.co/integrations">Click link:</a></p>
+<h3 id="elastic-agent">Elastic Agent</h3>
+<p>Elastic integrations are powered by Elastic Agent. Elastic Agent is a single, unified way to add 
+monitoring for logs, metrics, and other types of data to a host. It can also protect hosts from 
+security threats, query data from operating systems, forward data from remote services or hardware, and more. </p>
+<h3 id="sample-hands-on">Sample Hands-on</h3>
+<p>I will :</p>
+<ul>
+<li>
+<p>Use curl commands to talk to the Elasticsearch REST API. 
+   Or if you choose to use Kibana Devtools, thats also ok, because</p>
+</li>
+<li>
+<p>Kibana’s Devtools can automatically recognizes and converts curl commands .</p>
+</li>
+</ul>
+<p><strong><em>create an index Called middleware</em></strong></p>
+<p><code>curl -X PUT “localhost:9200/middleware</code></p>
+<p><strong><em>Delete the index Called middleware</em></strong></p>
+<p><code>curl -X DELETE “localhost:9200/middleware”</code></p>
+<p><strong><em>Create an index Called middleware with just one shard and no replicas</em></strong></p>
+<pre><code>PUT /middleware?pretty
+{
+   &quot;settings&quot; : {
+   &quot;number_of_shards&quot; : 1,
+   &quot;number_of_replicas&quot; : 0
+  }
+}
+</code></pre>
+<p><strong><em>loading data into that index Called middleware</em></strong></p>
+<pre><code>PUT /middleware/_mapping
+{
+  &quot;properties&quot;: {
+  &quot;post_time&quot;: { &quot;type&quot;: &quot;date&quot; },
+  &quot;username&quot;:  { &quot;type&quot;: &quot;keyword&quot; },
+  &quot;message&quot;:   { &quot;type&quot;: &quot;text&quot; }
+ }
+}
+</code></pre>
+<p><strong><em>Now Load some data</em></strong></p>
+<ol>
+<li>Manually</li>
+</ol>
+<pre><code>POST /middleware/_doc/?pretty
+{
+    &quot;user&quot; : &quot;collins&quot;,
+    &quot;post_date&quot; : &quot;2023-16-03T14:10:10&quot;,
+    &quot;message&quot; : &quot;Welcome to Elasticsearch?&quot;
+}
+</code></pre>
+<p>see this mediam link, its cool <a href="https://medium.com/tech-explained/getting-hands-on-with-elasticsearch-9969a2894f8a">Click-Link</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Kafka/kafka/" class="btn btn-neutral float-left" title="Kafka"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Flask/flask/" class="btn btn-neutral float-right" title="Flask">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Kafka/kafka/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Flask/flask/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

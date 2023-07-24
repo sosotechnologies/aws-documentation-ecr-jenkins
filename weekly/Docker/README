@@ -1,0 +1,27 @@
+- Build 3 different apps and run them locally, to be sure they work:
+  - python Mkdocs
+  - node app
+  - Maven Web App
+- Create 3 different repos and write their Dockerfiles
+
+
+### create 3 repos in Dockerhub
+
+- sosotech/sosotechapp
+- sosotech/sosotechdb
+- sosotech/sosotechweb
+
+### build as
+
+``` 
+docker build -t sosotech/sosotechapp:v1 .
+docker build -t sosotech/sosotechdb:v1 .
+docker build -t sosotech/sosotechweb:v1 .
+```
+
+
+```docker pull nginx```
+```docker pull memcached```
+```docker pull rabbitmq```
+
+git clone https://github.com/sosotechnologies/cicd-maven-jenkins-ecr.git

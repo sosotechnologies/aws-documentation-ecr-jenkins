@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/Azure/azure/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Azure - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Azure";
+        var mkdocs_page_input_path = "weekly\\Azure\\azure.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/Azure/azure/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Azure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#whats-hierarchy">Whats hierarchy</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-a-budget">Set a budget</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#azure-storage-types">Azure Storage types</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#azure-networking-service">Azure Networking Service</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#azure-and-terraform">Azure and Terraform</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#azure-authentication-from-the-terminal">Azure authentication from the terminal</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#azure-active-directory">Azure Active Directory</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#accounts-and-subscriptions">Accounts and subscriptions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#users">users</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-create-a-new-tenant-for-your-organization">Optional: Create a new tenant for your organization</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#storage">Storage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#storage-access-control-iam">Storage Access Control (IAM)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>Azure</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/Azure/azure.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="azure">Azure</h1>
+<p>Free azure account and go to the postal link:</p>
+<ul>
+<li><a href="https://azure.microsoft.com/free/">Free account-Link</a></li>
+<li><a href="https://portal.azure.com/">Portal-Link</a></li>
+</ul>
+<h2 id="whats-hierarchy">Whats hierarchy</h2>
+<p>Azure provides four levels of management: 
+<strong><em>management groups -&gt; Subscriptions -&gt; Resource Groups -&gt; Resources</em></strong>
+ <img alt="hierarchy" src="../photos/hierarchy.png" /></p>
+<ul>
+<li><strong><em>Management groups</em></strong> help you manage access, policy, and compliance for 
+multiple subscriptions. All subscriptions in a management group automatically 
+inherit the conditions that are applied to the management group.</li>
+<li><strong><em>Subscriptions</em></strong> associate user accounts with the resources that they create. </li>
+<li><strong><em>Resource groups</em></strong> are logical containers where you can deploy and manage 
+Azure resources like web apps, databases, and storage accounts.</li>
+<li><strong><em>Resources</em></strong> are instances of services that you can create, such as virtual 
+machines, storage, and SQL databases.</li>
+</ul>
+<h3 id="set-a-budget">Set a budget</h3>
+<p><img alt="budget" src="../photos/budget.png" /></p>
+<h3 id="azure-storage-types">Azure Storage types</h3>
+<p>Azure Storage offers five core services:</p>
+<ul>
+<li><strong><em>Blob Storage</em></strong> helps you create data lakes for your analytics needs, and provides storage 
+ to build powerful cloud-native and mobile apps.</li>
+<li><strong><em>File Storage</em></strong>: Managed file shares for cloud or on-premises deployments.</li>
+<li><strong><em>Queue Storage</em></strong>: A messaging store for reliable messaging between application components.</li>
+<li><strong><em>Table Storage</em></strong>: A NoSQL store for schemaless storage of structured data.</li>
+<li><strong><em>Managed Disk Storage</em></strong>: Block-level storage volumes for Azure VMs.</li>
+<li><strong><em>Azure Elastic SAN (preview)</em></strong>: A fully integrated solution that simplifies deploying, 
+scaling, managing, and configuring a SAN in Azure.</li>
+</ul>
+<p>Azure also offers a list of SQL Data and non-SQL Databases.
+For More on Azure Storage, see link: <a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction">Azure Storage Link</a></p>
+<h3 id="azure-networking-service">Azure Networking Service</h3>
+<p>For More on Azure networking, see link: <a href="https://learn.microsoft.com/en-us/azure/networking/fundamentals/networking-overview">Azure networking Link</a></p>
+<h2 id="azure-and-terraform">Azure and Terraform</h2>
+<p>Azure provder Terraform link: <a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">Terraform link</a></p>
+<h3 id="azure-authentication-from-the-terminal">Azure authentication from the terminal</h3>
+<pre><code>az login
+az account list
+az account list --query [*].[name,id]
+</code></pre>
+<p>In azure terminal - bash, 
+  - Create an AD service principle for RBAC  using below command, 
+  - Next, go to subscriptions and get the subscription ID.</p>
+<pre><code>az ad sp create-for-rbac -n &quot;Terraform-Soso&quot; --role=&quot;Contributor&quot; --scopes=&quot;/subscriptions/b965a029-32b4-4671-b283-350344c89091&quot;
+</code></pre>
+<p>Go to azure <strong><em>app registration</em></strong> and see that it was created.
+Copy the info created. In my case:</p>
+<pre><code>{
+  &quot;appId&quot;: &quot;297ec591-b16e-42ce-9e03-1ebd725aa3f9&quot;,
+  &quot;displayName&quot;: &quot;Terraform-Soso&quot;,
+  &quot;password&quot;: &quot;FZG8Q~-uPKCxRNgIg8JVAKYO2xm4j..S1SpFoaxg&quot;,
+  &quot;tenant&quot;: &quot;054da2e5-2fbf-483f-961e-a3b2839bd53c&quot;
+}
+</code></pre>
+<h2 id="azure-active-directory">Azure Active Directory</h2>
+<p>Azure AD part of Microsoft <a href="https://www.microsoft.com/en-us/security/business/microsoft-entra">Entra</a>, is an identity and Access Management service that provides single sign-on, multifactor 
+authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.</p>
+<h3 id="accounts-and-subscriptions">Accounts and subscriptions</h3>
+<ul>
+<li><strong><em>Account:</em></strong> </li>
+<li><strong><em>Subscription:</em></strong></li>
+<li><strong><em>Tenant:</em></strong></li>
+<li><strong><em>Resource Groups:</em></strong></li>
+</ul>
+<h4 id="users">users</h4>
+<p>There are three types of user accounts that you can have in Azure AD:
+<strong><em>federated</em></strong>
+<strong><em>synchronized</em></strong>
+<strong><em>cloud</em></strong></p>
+<h4 id="optional-create-a-new-tenant-for-your-organization">Optional: Create a new tenant for your organization</h4>
+<p>For more info see: <a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-access-create-new-tenant">To create a new tenant</a></p>
+<p>After creating tenant, it comes with nothin installed, so I will have to add subscriptions...
+<strong><em>Note</em></strong>: You can switch between tenants</p>
+<h2 id="storage">Storage</h2>
+<h3 id="storage-access-control-iam">Storage Access Control (IAM)</h3>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../rancher/rancher/" class="btn btn-neutral float-left" title="Rancher"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Openshift/openshift/" class="btn btn-neutral float-right" title="OpenShift">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../rancher/rancher/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Openshift/openshift/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

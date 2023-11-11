@@ -166,3 +166,89 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins -y
 ```
+
+### Multiple install script
+
+```sh
+#!/bin/bash
+# Update package lists
+apt-get update
+
+# Install dependencies
+apt-get install -y curl bash-completion snapd git unzip wget
+
+# Install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Install kubectx and kubens
+git clone https://github.com/ahmetb/kubectx /opt/kubectx
+ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+ln -s /opt/kubectx/completion/kubectx.bash /etc/bash_completion.d/kubectx
+ln -s /opt/kubectx/completion/kubens.bash /etc/bash_completion.d/kubens
+echo 'alias kx=kubectx' >> /root/.bashrc
+echo 'alias kn=kubens' >> /root/.bashrc
+
+# Install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install
+
+# Install Python and Pip
+apt-get install -y python3 python3-pip
+
+# Install Flask
+pip3 install flask
+
+# Install Trivy
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | tee -a /etc/apt/sources.list.d/trivy.list
+apt-get update
+apt-get install -y trivy
+
+# Install MkDocs
+pip3 install mkdocs
+
+# Install Terraform
+curl -LO "https://releases.hashicorp.com/terraform/1.5.2/terraform_1.5.2_linux_amd64.zip"
+unzip terraform_1.5.2_linux_amd64.zip
+sudo install -o root -g root -m 0755 terraform /usr/local/bin/terraform
+
+# Install Helm
+curl https://baltocdn.com/helm/signing.asc | apt-key add -
+apt-get install -y apt-transport-https --no-install-recommends
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list
+apt-get update
+apt-get install -y helm
+
+```sh
+# Install Jenkins
+#!/bin/bash
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+sudo apt install maven -y
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
+```
+
+# Install Docker
+sudo su -
+sudo apt-get update -y
+sudo apt-get install ca-certificates curl gnupg -y
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg 
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+# Add ubuntu user to the docker group
+sudo usermod -aG docker jenkins
+```
+

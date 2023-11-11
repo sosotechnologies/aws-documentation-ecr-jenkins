@@ -212,6 +212,7 @@ Steps:
 ## Jenkins
 - Ubuntu VERSION="20.04.6 LTS 
 - TCP Port ***8080*** from Anywhere - IPv4 and IPv6
+- Add Port 8080 to your security groups
 
 ### Install
 If you have any issues, then: curl the IP address if you had any issues.
@@ -363,7 +364,7 @@ sudo apt install awscli -y
 
 ***Configure CI [Git, Maven, JVM, SonarQube Scanner ] on Jenkins GUI***.
 
-In the Jenkins UI --> manage Jenkins --> Global Tool Configuration [save]
+In the Jenkins UI --> manage Jenkins --> Tools  [save]
 
 
 | Services          |   Configured Names      |

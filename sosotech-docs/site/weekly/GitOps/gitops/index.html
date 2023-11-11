@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/GitOps/gitops/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>GitOps - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GitOps";
+        var mkdocs_page_input_path = "weekly\\GitOps\\gitops.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/GitOps/gitops/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">GitOps</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#example-1">Example 1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ex-2">EX 2:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#repo-1">Repo 1.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repo-2">Repo 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repo-3">Repo 3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cd-into-flux-fleet-directory-and-create-the-below-resources">Cd into flux-fleet directory and create the below resources</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repo-4">repo 4</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI/ai/">AI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>GitOps</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/GitOps/gitops.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gitops">GitOps</h1>
+<p>my repo: <a href="https://github.com/sosotechnologies/soso-flux">link</a></p>
+<h2 id="example-1">Example 1</h2>
+<ul>
+<li>my Github name is: sosotechnologies</li>
+<li>Create a new repo called: infra</li>
+<li>create a github personal Access Token(classic) called: flux </li>
+<li>Create a kubernetes cluster</li>
+<li>Bootstrap the cluster</li>
+<li>watch video: <a href="https://www.youtube.com/watch?v=X9R5ySkiUkc">link</a></li>
+</ul>
+<p>save creds as env var</p>
+<pre><code>export GITHUB_TOKEN=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
+export GITHUB_USER=sosotechnologies
+export GITHUB_REPO=infra
+
+ echo $GITHUB_USER
+ echo $GITHUB_REPO
+ echo $GITHUB_TOKEN
+</code></pre>
+<p>create an eks cluster</p>
+<p>My terraform link: <a href="">LINK</a></p>
+<p>bootstrap cluster, this bootstrap will also install flux</p>
+<pre><code>flux bootstrap github --owner=sosotechnologies --repository=sosoflux-infra --branch=main  --path=./florida/miami --personal true
+</code></pre>
+<p>You should see this structure in your github repo:</p>
+<p><img alt="gitops2" src="../photos/gitops2.png" /></p>
+<p><strong><em>Next:</em></strong>
+- generate an ssh key from your ec2 terminal
+- Go to your github --&gt; settings --&gt; SSH and GPG keys and paste [id_rsa.pub] content.
+- clone the infra repo with [ssh]</p>
+<pre><code>ssh-keygen
+cd .ssh
+cat id_rsa.pub
+</code></pre>
+<pre><code>git clone git@github.com:sosotechnologies/sosoflux-infra.git
+cd sosoflux-infra
+</code></pre>
+<p>[ec2-user@ip-172-31-145-18 infra]$ <code>tree</code></p>
+<pre><code>.
+└── florida
+    └── miami
+        └── flux-system
+            ├── gotk-components.yaml
+            ├── gotk-sync.yaml
+            └── kustomization.yaml
+</code></pre>
+<p>add a demo folder and a yaml file in the folder</p>
+<p>[ec2-user@ip-172-31-145-18 eks]$ <code>cd florida</code>
+[ec2-user@ip-172-31-145-18 eks]$ <code>mkdir demo &amp;&amp; cd demo &amp;&amp; touch sosodocs.yaml</code></p>
+<pre><code>
+└── florida
+    └── miami
+        ├── demo
+        │   └── sosodocs.yaml
+        └── flux-system
+            ├── gotk-components.yaml
+            ├── gotk-sync.yaml
+            └── kustomization.yaml
+</code></pre>
+<p>commit these changes to your git repo</p>
+<pre><code>git add -A &amp;&amp; \
+git commit -m &quot;added demo folder&quot; &amp;&amp; \
+git push origin main
+</code></pre>
+<p><strong><em>Note:</em></strong> if you dont wanna wait for flux to deploy, use this command</p>
+<pre><code>flux reconcile kustomization flux-system --with-source
+</code></pre>
+<p><strong><em>NEXT</em></strong>
+IRSA
+Get the OpenCD Connect Provider URL from the EKS cluster, use that to create an IDP in IAM</p>
+<p><img alt="IDp-add" src="../photos/IDp-add.png" /></p>
+<p><strong><em>NEXT</em></strong>
+Create an IAM role and add the IDP.</p>
+<p><img alt="idp-add2" src="../photos/idp-add2.png" /></p>
+<p>Give the AmazonEC2ContainerRegistryReadOnly PERMISSION TO THE ipd ROLE, Create role
+<img alt="permiss" src="../photos/permiss.png" /></p>
+<p>Go to the role and edit the trust policy
+<img alt="trust" src="../photos/trust.png" /></p>
+<pre><code class="language-json">{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;Federated&quot;: &quot;arn:aws:iam::088789840359:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/4960280A882DD4D93CCCF19F4E3A32E7&quot;
+            },
+            &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
+            &quot;Condition&quot;: {
+                &quot;StringEquals&quot;: {
+                    &quot;oidc.eks.us-east-1.amazonaws.com/id/4960280A882DD4D93CCCF19F4E3A32E7:sub&quot;: &quot;system:serviceaccount:flux-system:ecr-credentials-sync&quot;
+                }
+            }
+        }
+    ]
+}
+
+</code></pre>
+<p>Copy the arn of the newly created role: <strong><em>arn:aws:iam::088789840359:role/FluxECRAccess</em></strong></p>
+<p><strong><em>NEXT</em></strong>
+- Create a cron job. see the repo, my cronjob is in the file named ecr-job.yaml
+- update the role arn in the ecr-job.yaml with your own role arn.</p>
+<p>commit these changes to your git repo</p>
+<pre><code>git add -A &amp;&amp; \
+git commit -m &quot;added demo folder&quot; &amp;&amp; \
+git push origin main
+</code></pre>
+<p><strong><em>Note:</em></strong> if you dont wanna wait for flux to deploy, use this command</p>
+<pre><code>flux reconcile kustomization flux-system --with-source
+</code></pre>
+<p>Check to see that the cronjob was created: <code>kubectl get cj -n flux-system</code></p>
+<p>Create a sample job since our cronjob is schedule for 6 hours intervals, and we can't wait.</p>
+<pre><code>k create job --from=cronjob/ecr-credentials-sync -n flux-system ecr-credentials-sync-init
+</code></pre>
+<pre><code>kubectl get secret -n flux-system
+kubectl get po -n flux-system
+</code></pre>
+<p>commit these changes to your git repo</p>
+<p>[ec2-user@ip-172-31-145-18 infra]$ <code>git add .</code>
+[ec2-user@ip-172-31-145-18 infra]$ <code>git commit -m "added demo folder"</code>
+[ec2-user@ip-172-31-145-18 infra]$ <code>git push</code></p>
+<p><strong><em>Note:</em></strong> if you dont wanna wait for flux to deploy, use this command</p>
+<pre><code>flux reconcile kustomization flux-system --with-source
+</code></pre>
+<p><strong><em>NOTE</em></strong>
+UNfortunately, I had an error: [✗ Kustomization reconciliation failed: ImagePolicy/flux-system/nginx dry-run failed, error: no matches for kind "ImagePolicy" in version "image.toolkit.fluxcd.io/v1alpha1"]</p>
+<p>woerking on it
+https://aws.amazon.com/blogs/containers/building-a-gitops-pipeline-with-amazon-eks/</p>
+<pre><code>flux create tenant soso-tenant4 --with-namespace team4 --export &gt; soso4.yaml
+</code></pre>
+<p>https://devopstales.github.io/kubernetes/gitops-flux2/</p>
+<p>Official flux: <a href="https://fluxcd.io/flux/cmd/flux/">Link</a></p>
+<p>$ docker pull nginx:1.23.4</p>
+<p>$ aws ecr get-login-password --region=us-east-1</p>
+<p><strong><em>RESEARCH THIS IAM roles for service accounts(IRSA)</em></strong>
+Flux IRSA link: <a href="https://fluxcd.io/flux/components/image/imagerepositories/">LINK</a></p>
+<p>When using IRSA to enable access to ECR, add the following patch to your bootstrap repository, 
+in the flux-system/kustomization.yaml file:</p>
+<pre><code class="language-yaml">apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - gotk-components.yaml
+  - gotk-sync.yaml
+patches:
+  - patch: |
+      apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: image-reflector-controller
+        annotations:
+          eks.amazonaws.com/role-arn: &lt;role arn&gt;      
+    target:
+      kind: ServiceAccount
+      name: image-reflector-controller
+</code></pre>
+<h2 id="ex-2">EX 2:</h2>
+<p><img alt="arch" src="../photos/arch.png" /></p>
+<ul>
+<li>install GitHub Cli</li>
+<li>Create 4 repos: </li>
+<li>flux-production/apps</li>
+<li>flux-staging/apps</li>
+<li>flux-fleet[with-bootstrapping]</li>
+<li>devops-toolkit/apps[repo-already-exists]</li>
+<li>clone them separately</li>
+<li>create namespaces: production and staging </li>
+<li>create prod and staging source files in the [app] folder</li>
+<li>create a kustomization for prod and staging source files in the [app] folder</li>
+</ul>
+<p><strong><em>Install Git Cli</em></strong></p>
+<pre><code>wget https://github.com/cli/cli/releases/download/v2.15.0/gh_2.15.0_linux_amd64.rpm
+
+sudo rpm -i gh_2.15.0_linux_amd64.rpm
+
+gh --version
+</code></pre>
+<p>copy key and create in Github-SSH, then authenticate GH</p>
+<pre><code>gh auth login
+</code></pre>
+<p>save Git creds as env var</p>
+<pre><code>export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+export GITHUB_USER=sosotechnologies
+</code></pre>
+<pre><code>echo $GITHUB_USER
+echo $GITHUB_TOKEN
+</code></pre>
+<h3 id="repo-1">Repo 1.</h3>
+<pre><code>mkdir -p flux-production/apps
+cd flux-production
+git init
+gh repo create
+
+echo &quot;commit Readme&quot; | tee README.md
+
+git add . &amp;&amp; \
+git commit -m &quot;added prod folder&quot; &amp;&amp; \
+git push --set-upstream origin master
+</code></pre>
+<h3 id="repo-2">Repo 2</h3>
+<pre><code>mkdir -p flux-staging/apps
+cd flux-staging
+
+git init
+gh repo create
+
+[Select: Push an existing local repository to GitHub]
+
+echo &quot;commit Readme&quot; | tee README.md
+
+git add . &amp;&amp; \
+git commit -m &quot;added stag folder&quot; &amp;&amp; \
+git push --set-upstream origin master
+</code></pre>
+<pre><code>kubectl create ns production 
+kubectl create ns staging 
+</code></pre>
+<h3 id="repo-3">Repo 3</h3>
+<p>Remember the path defined here [apps] is the app folder I created in staging and production repos, bootstrap will:
+- install flux
+- Create a github repo
+- create the deploy keys
+...</p>
+<pre><code>flux bootstrap github --owner sosotechnologies --repository flux-fleet --branch main  --path apps --personal true
+</code></pre>
+<p>See the resources that were created from the bootstrap</p>
+<pre><code>kubectl get po -n flux-system
+kubectl get svc -n flux-system
+kubectl get secrets -n flux-system
+kubectl get cm -n flux-system
+</code></pre>
+<h4 id="cd-into-flux-fleet-directory-and-create-the-below-resources">Cd into flux-fleet directory and create the below resources</h4>
+<ul>
+<li>staging source and Kustomization</li>
+<li>production source and Kustomization</li>
+<li>devops-toolkit</li>
+</ul>
+<pre><code>git clone git@github.com:sosotechnologies/flux-fleet.git
+cd flux-fleet
+</code></pre>
+<p>So far my flux-weekend folder looks like so:</p>
+<p><img alt="arch2" src="../photos/like-this2.png" /></p>
+<p><strong><em>Create Kustomization and Source in the flux-fleet/ folder</em></strong>
+- Create source and Kustomize for staging</p>
+<pre><code>flux create source git staging --url https://github.com/sosotechnologies/flux-staging --branch master --interval 30s --export | tee apps/staging.yaml
+</code></pre>
+<ul>
+<li>Kustomize staging to same file: apps/staging.yaml</li>
+</ul>
+<pre><code>flux create kustomization staging --source staging --path &quot;./&quot; --prune true --interval 10m --export | tee -a apps/staging.yaml
+</code></pre>
+<p><strong><em>Create source and Kustomize for production</em></strong></p>
+<pre><code>flux create source git production --url https://github.com/sosotechnologies/flux-production --branch master --interval 30s --export | tee apps/production.yaml
+</code></pre>
+<p>Kustomize production to same file: apps/production.yaml</p>
+<pre><code>flux create kustomization production --source production --path &quot;./&quot; --prune true --interval 10m --export | tee -a apps/production.yaml
+</code></pre>
+<h3 id="repo-4">repo 4</h3>
+<p>Create devops-toolkit in thesame in the flux-fleet/ folder</p>
+<pre><code>flux create source git devops-toolkit --url=https://github.com/sosotechnologies/devops-toolkit --branch=master --interval=30s --export | tee apps/devops-toolkit.yaml
+</code></pre>
+<pre><code>git add . &amp;&amp; \
+git commit -m &quot;added staging folder, production folder and devops-toolkit&quot; &amp;&amp; \
+git push --set-upstream origin main
+</code></pre>
+<p><strong><em>Now my flux-weekend folder looks like</em></strong></p>
+<p><img alt="arch3" src="../photos/like-this3.png" /></p>
+<pre><code>watch flux get sources git
+flux get kustomizations
+</code></pre>
+<p><strong><em>setup is done! NEXT: Create Helm Releases</em></strong></p>
+<p><strong>Staging Release</strong></p>
+<pre><code>cd flux-staging
+</code></pre>
+<p>Copy this command and fun as is:</p>
+<pre><code>echo &quot;image:
+    tag: 2.9.9
+ingress:
+    host: staging.devops-toolkit.$INGRESS_HOST.nip.io&quot; \
+    | tee values.yaml
+</code></pre>
+<pre><code>flux create helmrelease devops-toolkit-staging --source GitRepository/devops-toolkit --values values.yaml --chart &quot;helm&quot; --target-namespace staging --interval 30s --export | tee apps/devops-toolkit.yaml
+</code></pre>
+<pre><code>rm values.yaml
+</code></pre>
+<pre><code>git add . &amp;&amp; \
+git commit -m &quot;added staging helm release&quot; &amp;&amp; \
+git push --set-upstream origin master
+</code></pre>
+<pre><code>watch flux get helmreleases
+kubectl --namespace staging get pods
+</code></pre>
+<p><strong><em>NOTE:</em></strong> You can change the image tag in the staging: devops-toolkit.yaml
+    From:  tag: 2.9.9 --&gt; tag: 2.9.17 
+And [commit and push to Git] and flux will automatically detect and deploy.</p>
+<p><strong>Production Release</strong></p>
+<pre><code>cd ..
+cd flux-production
+</code></pre>
+<p>Copy this command and fun as is:</p>
+<pre><code>echo &quot;image:
+    tag: 2.9.17
+ingress:
+    host: production.devops-toolkit.$INGRESS_HOST.nip.io&quot; \
+    | tee values.yaml
+</code></pre>
+<pre><code>flux create helmrelease devops-toolkit-production --source GitRepository/devops-toolkit --values values.yaml --chart &quot;helm&quot; --target-namespace production --interval 30s --export | tee apps/devops-toolkit.yaml
+</code></pre>
+<pre><code>rm values.yaml
+</code></pre>
+<pre><code>git add . &amp;&amp; \
+git commit -m &quot;added production helm release&quot; &amp;&amp; \
+git push --set-upstream origin master
+</code></pre>
+<pre><code>flux get helmreleases
+watch kubectl --namespace production get pods
+</code></pre>
+<p>Final Tree</p>
+<p><img alt="arch4" src="../photos/like-this4.png" /></p>
+<p><strong>IT'S ALL FOLKS!</strong></p>
+<p>NEXT TASK</p>
+<p>Configure ECR/OICD-IRSA/GIT tagging for CD deployment</p>
+<pre><code>aws ecr list-images --repository=soso-repository
+</code></pre>
+<pre><code>kubectl create job --from=cronjob/ecr-credentials-sync -n flux-system ecr-credentials-sync-init --dry-run=client -o yaml &gt; job.yaml
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../GitHub/github/" class="btn btn-neutral float-left" title="GitHub"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Gitaction/gitaction/" class="btn btn-neutral float-right" title="GitHub Action">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../GitHub/github/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Gitaction/gitaction/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

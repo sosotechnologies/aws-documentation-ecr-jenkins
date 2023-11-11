@@ -3,7 +3,7 @@ site_description: SosoTech External Documentation for Tenants
 repo_name: soso_technologies_macaz_doc.io
 site_url: https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/
 repo_url: https://github.com/sosotechnologies/soso_technologies_macaz_doc.io
-edit_uri: https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/repo/blob/main/docs/index.md
+edit_uri: https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/
 copyright: SosoTech LLC - Documentation
 theme:
   name: readthedocs
@@ -70,7 +70,9 @@ nav:
    - Remote Installation: Getting-Started/remote-install.md
  - Weekly Lectures: 
    - CICD: weekly/CICD/cicd.md
-   - Cloud Technologies: weekly/Cloud-Technologies/intro-aws.md
+   - Cloud Technologies: 
+     - AWS: weekly/Cloud-Technologies/intro-aws.md
+     - GCP: weekly/Cloud-Technologies/gcp.md
    - GitHub: weekly/GitHub/github.md
    - GitOps: weekly/GitOps/gitops.md
    - GitHub Action: weekly/Gitaction/gitaction.md
@@ -82,7 +84,9 @@ nav:
    - Kafka: weekly/Kafka/kafka.md
    - ELK: weekly/ELK/elk.md
    - Flask: weekly/Flask/flask.md
+   - Rancher: weekly/rancher/rancher.md
    - Azure: weekly/Azure/azure.md
+   - Hashicorp Vault: weekly/hashicorp-vault/hashicorp-vault.md
    - OpenShift: weekly/Openshift/openshift.md
    - Web Development: weekly/web-development/web-dev.md
    - MySQL Windows: weekly/mysql-windows/mysql-windows.md
@@ -96,6 +100,7 @@ nav:
      - Disaster Recovery: weekly/Random/Disaster-rec.md
      - Domain Git GoDaddy: weekly/Random/domain-github.md
      - Scripts: weekly/Random/scripts.md
+     - Zowe: weekly/Random/zowe.md
   
  
  

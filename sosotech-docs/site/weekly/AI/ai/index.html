@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sosotechnologies.github.io/soso_technologies_macaz_doc.io/weekly/AI/ai/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>AI - SosoTech External Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AI";
+        var mkdocs_page_input_path = "weekly\\AI\\ai.md";
+        var mkdocs_page_url = "/soso_technologies_macaz_doc.io/weekly/AI/ai/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> SosoTech External Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">About Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/all-scripts/">Script Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/local-install/">Local-Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Getting-Started/remote-install/">Remote Installation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Weekly Lectures</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../CICD/cicd/">CICD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cloud Technologies</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/intro-aws/">AWS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud-Technologies/gcp/">GCP</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitHub/github/">GitHub</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../GitOps/gitops/">GitOps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Gitaction/gitaction/">GitHub Action</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Terraform/github.md">Terraform</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/docker/">Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Kubernetes/Kubernetes.md">Kubernetes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Jenkins/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">AI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-ai">What is AI?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#artificial-neural-network-ann">Artificial Neural Network (ANN)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#neurons-in-ai">Neurons in AI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#weight">Weight</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bias">Bias</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#neural-network-activation-function">Neural Network Activation Function?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-neural-networks-work">How do Neural Networks Work?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-neural-networks-learn">How do Neural Networks Learn?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#machine-learning-in-anns">Machine Learning in ANNs</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka/kafka/">Kafka</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ELK/elk/">ELK</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Flask/flask/">Flask</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rancher/rancher/">Rancher</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure/">Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Openshift/openshift/">OpenShift</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../web-development/web-dev/">Web Development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mysql-windows/mysql-windows/">MySQL Windows</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Random Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/3tier/">3 Tier App</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/k8sapi/">Kubernetes API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/operating-systems/">OS Types Commands</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/eks-iam/">EKS-IAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/git-ecr-jenkins/">ECR-Jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Helm-Terraform-jenkins/">Helm-Terraform-jenkins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/Disaster-rec/">Disaster Recovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/domain-github/">Domain Git GoDaddy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Random/scripts/">Scripts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">SosoTech External Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Weekly Lectures &raquo;</li>
+      <li>AI</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/sosotechnologies/soso_technologies_macaz_doc.io/edit/main/docs/weekly/AI/ai.md">Edit on soso_technologies_macaz_doc.io</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="artificial-intelligence">Artificial Intelligence</h1>
+<p>Eventhough AI Machines seem to be a threat to humanity, yet, they cannot beat the power of human intelligence, Machines will never beat the creative or imaginative ability of humans. 
+Always remember, humans created the machine.</p>
+<h2 id="what-is-ai">What is AI?</h2>
+<p>"It is a branch of computer science by which we can create intelligent machines which can behave like a human, think like humans, and able to make decisions." </p>
+<p>setup google codeLab <a href="https://codelabs.developers.google.com/">Open-Link</a></p>
+<p>Theres always been this lask of understanding between machine learning and artificial intelligence.
+Put in context, artificial intelligence refers to the general ability of computers to emulate human thought and perform tasks in real-world environments, while machine learning refers to the technologies and algorithms that enable systems to identify patterns, make decisions, and improve themselves through experience.</p>
+<h2 id="artificial-neural-network-ann">Artificial Neural Network (ANN)</h2>
+<p>Artificial Neural Networks the most important part of the deep learning model, they are the brain inspired deep learning tool which replicate the way humans learn. </p>
+<p><strong><em>The Neuron</em></strong></p>
+<p>In the Human Body, the Neuron is a part of the brain and nervous system. The three broad functions of the CNS are:</p>
+<ul>
+<li>
+<p>To take in sensory information</p>
+</li>
+<li>
+<p>process information, and</p>
+</li>
+<li>
+<p>To send out motor signals.</p>
+</li>
+</ul>
+<p><img alt="ai1" src="../photos/ai1.png" /></p>
+<p><strong><em>But Now How do Neurons Connect?</em></strong></p>
+<p>Neurons communicate with each other by sending chemicals, called neurotransmitters, across a tiny space called a synapse, between the axons and dendrites of nearby neurons.</p>
+<p><img alt="ai2" src="../photos/ai2.png" /></p>
+<p>So, now that we have that understanding of a human neuron, and how the neurons connect, the goal of AI was to replicate the way the human brain learns. In another sence, create machines that would have the ability to learn, adapt, and make decisions.</p>
+<h2 id="neurons-in-ai">Neurons in AI</h2>
+<p>As seen in the diagram below, the Input Values are independent Variables of [1, 2, and m]. These variables need to be standardized to make sure all variables contribute evenly to a scale when items are added together, or to make it easier to interpret results of a regression or other analysis.
+ The <strong><em>output</em></strong> Value can be: continuous, binary or a catagorical variable. Neural network is made of interconnected neurons. Each of them is characterized by its weight, bias, and activation function.</p>
+<p><img alt="ai3" src="../photos/ai3.png" /></p>
+<h3 id="weight">Weight</h3>
+<p>Weight is the parameter within a neural network that transforms input data within the network's hidden layers. </p>
+<h3 id="bias">Bias</h3>
+<p>Bias in AI is when the machine gives consistently different outputs for one group of people compared to another. Typically these bias outputs follow classical societal biases like race, gender, biological sex, nationality or age.</p>
+<h3 id="neural-network-activation-function">Neural Network Activation Function?</h3>
+<p>An Activation Function is what makes the decision, if a neuron should be activated or not. This means that an ctivation Function is a mathematical “gate” that decide whether the neuron’s input to the network is important or not in the process of prediction using simpler mathematical operations. </p>
+<p><strong><em>Types of Activation Functions</em></strong></p>
+<ul>
+<li>
+<p><strong><em>Threshold Activation Function</em></strong>
+     is a commonly used activation function.It gives 1 as output of the input is either 0 or positive. If the input is negative, it gives 0 as output.
+     <img alt="ai6" src="../photos/ai6.png" /></p>
+</li>
+<li>
+<p><strong><em>Sigmoid Activation Function</em></strong>
+    Sigmoid Function is the most commonly used activation function in neural networks. It is the go-to model when it comes to predicting the probability as an output. Since probability of anything exists only between the range of 0 and 1, sigmoid has the ability to takes any real value as input and outputs values in the range of 0 to 1.
+      <img alt="ai4" src="../photos/ai4.png" /></p>
+</li>
+<li>
+<p><strong><em>Rectifier Activation Function</em></strong>
+    is the most popularly used activation function in the areas of convolutional neural networks and deep learning. It is of the form:
+    <img alt="ai7" src="../photos/ai7.png" /></p>
+</li>
+<li>
+<p><strong><em>Hyperbolic Tangent Activation Function</em></strong>
+    It is bipolar in nature. Similar to sigmoid, except a different output range of -1 to 1. In Tanh, the larger the input (more positive), the closer the output value will be to 1.0, whereas the smaller the input (more negative), the closer the output will be to -1.0.
+    <img alt="ai5" src="../photos/ai5.png" /></p>
+</li>
+</ul>
+<h3 id="how-do-neural-networks-work">How do Neural Networks Work?</h3>
+<p>Example Case: Real Estate Price prediction using a trained NN. 
+   <img alt="ai8" src="../photos/ai8.png" /></p>
+<ul>
+<li>
+<p>Looking at the <strong><em>Red</em></strong> arrows, this synapses connects Age, Area, bedroom to a neuron. 
+   So, this neuron is paying attention to properties that maybe:
+   Newer,
+   That have at least 3 bedrooms or more,
+   And which the homes have a larger area.</p>
+</li>
+<li>
+<p>Looking at the <strong><em>Blue</em></strong> arrows, this synapses connects Schools Ratings and bedroom to a neuron. 
+   So, this neuron is paying   attention to properties that maybe:
+   Families with Kids in school
+   Homes that have more bedrooms for the parents and kids.</p>
+</li>
+<li>
+<p>Looking at the <strong><em>Green</em></strong> arrows, this synapses connects Just the Age of the property.
+   So, this neuron is paying attention to properties that maybe:
+   Newly built, or
+   Properties that are historic, valuable properties, like above 100years old. 
+   A rectifier function can be used here, stating that, the moment the property turns 100 years, 
+   the rectifier functions kicks from 0 to 1. </p>
+</li>
+<li>
+<p>Looking at the <strong><em>Yellow</em></strong> arrows, this synapses connects Area (SqFt) and Bedrooms of the property. 
+   So, this neuron is paying attention to properties that maybe:
+   The homes here have a larger Area Sq and have many rooms. These may be homes that are mansions. </p>
+</li>
+<li>
+<p>Looking at the <strong><em>black</em></strong> arrows, this synapses connects all the input functions. So, this neuron is 
+   paying attention to properties because all the inputs match the criteria for the price of the property</p>
+</li>
+</ul>
+<p>So, all these different neuron communications will predict the price of the property</p>
+<h3 id="how-do-neural-networks-learn">How do Neural Networks Learn?</h3>
+<p>ANN can be categorized by how the data flows from the input node to the output node. B
+Some of the neural networks are some examples:</p>
+<p><strong><em>Gradient descent</em></strong>
+    is an optimization algorithm which is commonly-used to train machine learning models and neural networks. 
+    Training data helps these models learn over time, and the cost function within gradient descent specifically 
+    acts as a barometer, gauging its accuracy with each iteration of parameter updates.</p>
+<p><strong><em>Backpropagation algorithm</em></strong>
+    Artificial neural networks learn continuously by using corrective feedback loops to improve their predictive analytics. In simple terms, you can think of the data flowing from the input node to the output node through many different paths in the neural network. Only one path is the correct one that maps the input node to the correct output node. To find this path, the neural network uses a feedback loop, which works as follows:</p>
+<p>Each node makes a guess about the next node in the path.
+It checks if the guess was correct. Nodes assign higher weight values to paths that lead to more correct guesses and lower weight values to node paths that lead to incorrect guesses.
+For the next data point, the nodes make a new prediction using the higher weight paths and then repeat Step 1.
+Convolutional neural networks
+The hidden layers in convolutional neural networks perform specific mathematical functions, like summarizing or filtering, called convolutions. They are very useful for image classification because they can extract relevant features from images that are useful for image recognition and classification. The new form is easier to process without losing features that are critical for making a good prediction. Each hidden layer extracts and processes different image features, like edges, color, and depth.</p>
+<h3 id="machine-learning-in-anns">Machine Learning in ANNs</h3>
+<p>These ML algorithms help to solve different business problems like Forecasting, Regression, Clustering, Classification, and Associations, etc.
+ Machine learning is divided into mainly four types, which are:</p>
+<ul>
+<li>
+<p><strong><em>Supervised Machine Learning</em></strong> -
+  Ex: Housing Price Prediction.
+  A Supervised machine learning is a technique where we train the machines using the "labelled" dataset, and based on the training, the machine predicts the output. In this type of learning, the labelled data specifies that some of the inputs are already mapped to the output. The machine are First trained with the input and corresponding output, and then we ask the machine to predict the output using the test dataset. A classic example will be the example of training a machine with</p>
+</li>
+<li>
+<p><strong><em>Unsupervised Machine Learning</em></strong>
+  EX: Customer Segmentation and Market Basket Analysis.
+  In unsupervised machine learning, the machine is trained using the unlabeled dataset, and the machine predicts the output without any supervision. In this type, the models are trained with the data that is neither labelled nor classified, and the model acts on that data without any supervision. Unsupervised learning is much similar as a human learns, which makes it closer to the real AI.</p>
+</li>
+<li>
+<p><strong><em>Semi-Supervised Machine Learning</em></strong>
+  Ex: Lane-Finding on GPS data.
+  It represents the intermediate ground between Supervised and Unsupervised learning algorithms and uses the combination of labelled and unlabeled datasets during the training period.</p>
+</li>
+<li>
+<p><strong><em>Reinforcement Learning</em></strong>
+  Ex: Drivless Cars.
+  Reinforcement learning works on a feedback-based process, in which an AI agent automatically explore its surrounding by hitting &amp; trail, taking action, learning from experiences, and improving its performance. Agent gets rewarded for each good action and get punished for each bad action; hence the goal of reinforcement learning agent is to maximize the rewards.
+  In reinforcement learning, there is no labelled data like supervised learning, and agents learn from their experiences only.</p>
+</li>
+</ul>
+<p>For more on this section, see this javatpoint Link: <a href="https://www.javatpoint.com/types-of-machine-learning">Click-Link</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Jenkins/jenkins/" class="btn btn-neutral float-left" title="Jenkins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Kafka/kafka/" class="btn btn-neutral float-right" title="Kafka">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>SosoTech LLC - Documentation</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Jenkins/jenkins/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Kafka/kafka/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../assets/javascripts/extra.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

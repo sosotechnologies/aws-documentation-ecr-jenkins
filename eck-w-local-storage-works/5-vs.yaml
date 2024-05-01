@@ -1,0 +1,71 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: kibana-vs
+  namespace: eck
+spec:
+  gateways:
+    - istio-system/general-gateway 
+  hosts:
+    - kibana.stack.sosotechnologies.com
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: kibana
+            port:
+              number: 5601
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: elastic-vs
+  namespace: eck
+spec:
+  gateways:
+    - istio-system/general-gateway 
+  hosts:
+    - elastic.stack.sosotechnologies.com
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: elasticsearch-es-http 
+            port:
+              number: 9200
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: '2024-01-22T22:08:58Z'
+  labels:
+    common.k8s.elastic.co/type: kibana
+    kibana.k8s.elastic.co/name: kibana
+  name: kibana
+  namespace: eck
+spec:
+  ports:
+    - name: http
+      port: 5601
+      protocol: TCP
+      targetPort: 5601
+  selector:
+    common.k8s.elastic.co/type: kibana
+    kibana.k8s.elastic.co/name: kibana
+  type: ClusterIP
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: elastic-destination-rule
+  namespace: eck
+spec:
+  host: "elasticsearch-es-http.eck.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: SIMPLE

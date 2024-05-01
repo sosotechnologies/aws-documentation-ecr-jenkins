@@ -1,0 +1,102 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: elasticsearch-sa
+  namespace: eck
+---
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: elasticsearch
+  namespace: eck
+spec:
+  version: 8.13.2
+  nodeSets:
+  - name: default
+    count: 1
+    config: 
+      node.store.allow_mmap: false #Turn this to false when NOT implementing SSO
+    podTemplate:
+      metadata:
+        annotations:
+          traffic.sidecar.istio.io/includeInboundPorts: "*"
+          traffic.sidecar.istio.io/excludeOutboundPorts: "9300,443" 
+          traffic.sidecar.istio.io/excludeInboundPorts: "9300"
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: reserve
+                  operator: In
+                  values:
+                  - elastic-default
+        securityContext:
+          fsGroup: 1000
+          runAsGroup: 1000
+          runAsUser: 1000
+        serviceAccountName: elasticsearch-sa
+        automountServiceAccountToken: true
+        containers:
+          - name: elasticsearch
+            # env:
+            # - name: ES_JAVA_OPTS
+            #   value: "-Xms2g -Xmx2g"
+        initContainers:
+        - name: install-plugins
+          command:
+            - sh
+            - -c
+            - |
+              bin/elasticsearch-plugin remove --purge analysis-icu
+              bin/elasticsearch-plugin install --batch analysis-icu
+    volumeClaimTemplates:
+      - metadata:
+          name: elasticsearch-data
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          storageClassName: local-storage
+          resources:
+            requests:
+              storage: 5Gi
+  http:
+    service:
+      spec:
+        ports:
+          - name: https
+            port: 9200
+            protocol: TCP
+            targetPort: 9200
+
+# apiVersion: elasticsearch.k8s.elastic.co/v1
+# kind: Elasticsearch
+# metadata:
+#   name: elastic-istio
+# spec:
+#   version: 8.13.2
+#   volumeClaimDeletePolicy: DeleteOnScaledownOnly # Ensure PersistentVolumeClaims are not deleted on Elasticsearch cluster deletion
+#   nodeSets:
+#     - name: default
+#       count: 1
+#       volumeClaimTemplates: # Define volume claim settings for persistent storage
+#         - metadata:
+#             name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
+#           spec:
+#             accessModes:
+#               - ReadWriteOnce
+#             resources:
+#               requests:
+#                 storage: 10Gi # Adjust the storage capacity as needed
+#             storageClassName: local-storage # Define the Kubernetes storage class for the persistent volume
+#       podTemplate:
+#         metadata:
+#           annotations:
+#           # when using istio
+#             traffic.sidecar.istio.io/includeInboundPorts: "*"
+#             traffic.sidecar.istio.io/excludeOutboundPorts: "9300" 
+#             traffic.sidecar.istio.io/excludeInboundPorts: "9300"
+#         spec:
+#           automountServiceAccountToken: true 
+#           containers: [] # No container for Elasticsearch as per Elasticsearch documentation
